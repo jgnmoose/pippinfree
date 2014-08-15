@@ -1,0 +1,21 @@
+<?xml version='1.0'?>
+   <font>
+       <info aa='1' size='64' smooth='1' stretchH='100' bold='0' padding='0,0,0,0' spacing='0,0' charset='' italic='0' unicode='0' face='04b_19'/>
+       <common scaleW='256' packed='0' pages='1' lineHeight='89' scaleH='256' base='86'/>
+       <pages>
+            <page id='0' file='ScoreFont~ipad.png'/>
+       </pages>
+        <chars count='11'>
+            <char xadvance='28' x='126' chnl='0' yoffset='54' y='162' xoffset='0' id='32' page='0' height='0' width='0'/>
+            <char xadvance='37' x='126' chnl='0' yoffset='4' y='82' xoffset='0' id='48' page='0' height='78' width='60'/>
+            <char xadvance='23' x='188' chnl='0' yoffset='4' y='82' xoffset='0' id='49' page='0' height='78' width='46'/>
+            <char xadvance='37' x='64' chnl='0' yoffset='4' y='162' xoffset='0' id='50' page='0' height='78' width='60'/>
+            <char xadvance='37' x='64' chnl='0' yoffset='4' y='82' xoffset='0' id='51' page='0' height='78' width='60'/>
+            <char xadvance='37' x='188' chnl='0' yoffset='4' y='2' xoffset='0' id='52' page='0' height='78' width='60'/>
+            <char xadvance='37' x='126' chnl='0' yoffset='4' y='2' xoffset='0' id='53' page='0' height='78' width='60'/>
+            <char xadvance='37' x='64' chnl='0' yoffset='4' y='2' xoffset='0' id='54' page='0' height='78' width='60'/>
+            <char xadvance='37' x='2' chnl='0' yoffset='4' y='162' xoffset='0' id='55' page='0' height='78' width='60'/>
+            <char xadvance='37' x='2' chnl='0' yoffset='4' y='82' xoffset='0' id='56' page='0' height='78' width='60'/>
+            <char xadvance='37' x='2' chnl='0' yoffset='4' y='2' xoffset='0' id='57' page='0' height='78' width='60'/>
+       </chars>
+   </font>

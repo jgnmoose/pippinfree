@@ -7,13 +7,50 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3FC7845F199D72C1006D333A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC7845E199D72C1006D333A /* AppDelegate.swift */; };
-		3FC78461199D72C1006D333A /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3FC78460199D72C1006D333A /* GameScene.sks */; };
-		3FC78463199D72C1006D333A /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC78462199D72C1006D333A /* GameScene.swift */; };
-		3FC78465199D72C1006D333A /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC78464199D72C1006D333A /* GameViewController.swift */; };
 		3FC78468199D72C1006D333A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FC78466199D72C1006D333A /* Main.storyboard */; };
 		3FC7846A199D72C1006D333A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FC78469199D72C1006D333A /* Images.xcassets */; };
 		3FC78476199D72C1006D333A /* PippinFreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC78475199D72C1006D333A /* PippinFreeTests.swift */; };
+		3FC784C0199D73C6006D333A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC78481199D73C6006D333A /* AppDelegate.swift */; };
+		3FC784C1199D73C6006D333A /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC78482199D73C6006D333A /* GameScene.swift */; };
+		3FC784C2199D73C6006D333A /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC78483199D73C6006D333A /* GameViewController.swift */; };
+		3FC784C3199D73C6006D333A /* BMGlyphFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FC78487199D73C6006D333A /* BMGlyphFont.m */; };
+		3FC784C4199D73C6006D333A /* BMGlyphLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FC78489199D73C6006D333A /* BMGlyphLabel.m */; };
+		3FC784C6199D73C6006D333A /* CGFloat+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC78499199D73C6006D333A /* CGFloat+Extensions.swift */; };
+		3FC784C7199D73C6006D333A /* CGPoint+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC7849A199D73C6006D333A /* CGPoint+Extensions.swift */; };
+		3FC784C8199D73C6006D333A /* CGVector+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC7849B199D73C6006D333A /* CGVector+Extensions.swift */; };
+		3FC784C9199D73C6006D333A /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC7849C199D73C6006D333A /* Double+Extensions.swift */; };
+		3FC784CA199D73C6006D333A /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC7849D199D73C6006D333A /* Int+Extensions.swift */; };
+		3FC784CB199D73C6006D333A /* SKAction+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC7849E199D73C6006D333A /* SKAction+Extensions.swift */; };
+		3FC784CC199D73C6006D333A /* SKAction+SpecialEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC7849F199D73C6006D333A /* SKAction+SpecialEffects.swift */; };
+		3FC784CD199D73C6006D333A /* SKColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC784A0199D73C6006D333A /* SKColor+Extensions.swift */; };
+		3FC784CE199D73C6006D333A /* SKEmitterNode+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC784A1199D73C6006D333A /* SKEmitterNode+Extensions.swift */; };
+		3FC784CF199D73C6006D333A /* SKNode+DebugDraw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC784A2199D73C6006D333A /* SKNode+DebugDraw.swift */; };
+		3FC784D0199D73C6006D333A /* SKNode+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC784A3199D73C6006D333A /* SKNode+Extensions.swift */; };
+		3FC784D1199D73C6006D333A /* SKTAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC784A4199D73C6006D333A /* SKTAudio.swift */; };
+		3FC784D2199D73C6006D333A /* SKTEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC784A5199D73C6006D333A /* SKTEffects.swift */; };
+		3FC784D3199D73C6006D333A /* SKTTimingFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC784A6199D73C6006D333A /* SKTTimingFunctions.swift */; };
+		3FC784D4199D73C6006D333A /* Vector3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC784A7199D73C6006D333A /* Vector3.swift */; };
+		3FC784D5199D73C6006D333A /* Artwork.1.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FC784AA199D73C6006D333A /* Artwork.1.png */; };
+		3FC784D6199D73C6006D333A /* Artwork.1@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FC784AB199D73C6006D333A /* Artwork.1@2x~ipad.png */; };
+		3FC784D7199D73C6006D333A /* Artwork.1@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FC784AC199D73C6006D333A /* Artwork.1@2x~iphone.png */; };
+		3FC784D8199D73C6006D333A /* Artwork.1~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FC784AD199D73C6006D333A /* Artwork.1~ipad.png */; };
+		3FC784D9199D73C6006D333A /* Artwork.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3FC784AE199D73C6006D333A /* Artwork.plist */; };
+		3FC784DA199D73C6006D333A /* ScoreFont.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 3FC784B0199D73C6006D333A /* ScoreFont.atlas */; };
+		3FC784DB199D73C6006D333A /* ScoreFont.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3FC784B1199D73C6006D333A /* ScoreFont.xml */; };
+		3FC784DC199D73C6006D333A /* ScoreFont@2x.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3FC784B2199D73C6006D333A /* ScoreFont@2x.xml */; };
+		3FC784DD199D73C6006D333A /* ScoreFont@2x~ipad.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3FC784B3199D73C6006D333A /* ScoreFont@2x~ipad.xml */; };
+		3FC784DE199D73C6006D333A /* ScoreFont~ipad.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3FC784B4199D73C6006D333A /* ScoreFont~ipad.xml */; };
+		3FC784DF199D73C6006D333A /* gamemusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3FC784B6199D73C6006D333A /* gamemusic.mp3 */; };
+		3FC784E0199D73C6006D333A /* bounce.caf in Resources */ = {isa = PBXBuildFile; fileRef = 3FC784B8199D73C6006D333A /* bounce.caf */; };
+		3FC784E1199D73C6006D333A /* coin.caf in Resources */ = {isa = PBXBuildFile; fileRef = 3FC784B9199D73C6006D333A /* coin.caf */; };
+		3FC784E2199D73C6006D333A /* falling.caf in Resources */ = {isa = PBXBuildFile; fileRef = 3FC784BA199D73C6006D333A /* falling.caf */; };
+		3FC784E3199D73C6006D333A /* flying.caf in Resources */ = {isa = PBXBuildFile; fileRef = 3FC784BB199D73C6006D333A /* flying.caf */; };
+		3FC784E4199D73C6006D333A /* hitGround.caf in Resources */ = {isa = PBXBuildFile; fileRef = 3FC784BC199D73C6006D333A /* hitGround.caf */; };
+		3FC784E5199D73C6006D333A /* oink.caf in Resources */ = {isa = PBXBuildFile; fileRef = 3FC784BD199D73C6006D333A /* oink.caf */; };
+		3FC784E6199D73C6006D333A /* pop.caf in Resources */ = {isa = PBXBuildFile; fileRef = 3FC784BE199D73C6006D333A /* pop.caf */; };
+		3FC784E7199D73C6006D333A /* whack.caf in Resources */ = {isa = PBXBuildFile; fileRef = 3FC784BF199D73C6006D333A /* whack.caf */; };
+		3FC784E9199D7433006D333A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC784E8199D7433006D333A /* Constants.swift */; };
+		3FC784EB199D7487006D333A /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC784EA199D7487006D333A /* MenuScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,15 +66,68 @@
 /* Begin PBXFileReference section */
 		3FC78459199D72C1006D333A /* PippinFree.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PippinFree.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FC7845D199D72C1006D333A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3FC7845E199D72C1006D333A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3FC78460199D72C1006D333A /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		3FC78462199D72C1006D333A /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
-		3FC78464199D72C1006D333A /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		3FC78467199D72C1006D333A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3FC78469199D72C1006D333A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3FC7846F199D72C1006D333A /* PippinFreeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PippinFreeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FC78474199D72C1006D333A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3FC78475199D72C1006D333A /* PippinFreeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PippinFreeTests.swift; sourceTree = "<group>"; };
+		3FC78481199D73C6006D333A /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3FC78482199D73C6006D333A /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		3FC78483199D73C6006D333A /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		3FC78486199D73C6006D333A /* BMGlyphFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMGlyphFont.h; sourceTree = "<group>"; };
+		3FC78487199D73C6006D333A /* BMGlyphFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMGlyphFont.m; sourceTree = "<group>"; };
+		3FC78488199D73C6006D333A /* BMGlyphLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMGlyphLabel.h; sourceTree = "<group>"; };
+		3FC78489199D73C6006D333A /* BMGlyphLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMGlyphLabel.m; sourceTree = "<group>"; };
+		3FC7848B199D73C6006D333A /* GADAdMobExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADAdMobExtras.h; sourceTree = "<group>"; };
+		3FC7848C199D73C6006D333A /* GADAdNetworkExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADAdNetworkExtras.h; sourceTree = "<group>"; };
+		3FC7848D199D73C6006D333A /* GADAdSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADAdSize.h; sourceTree = "<group>"; };
+		3FC7848E199D73C6006D333A /* GADBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADBannerView.h; sourceTree = "<group>"; };
+		3FC7848F199D73C6006D333A /* GADBannerViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADBannerViewDelegate.h; sourceTree = "<group>"; };
+		3FC78490199D73C6006D333A /* GADInAppPurchase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADInAppPurchase.h; sourceTree = "<group>"; };
+		3FC78491199D73C6006D333A /* GADInAppPurchaseDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADInAppPurchaseDelegate.h; sourceTree = "<group>"; };
+		3FC78492199D73C6006D333A /* GADInterstitial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADInterstitial.h; sourceTree = "<group>"; };
+		3FC78493199D73C6006D333A /* GADInterstitialDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADInterstitialDelegate.h; sourceTree = "<group>"; };
+		3FC78494199D73C6006D333A /* GADModules.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADModules.h; sourceTree = "<group>"; };
+		3FC78495199D73C6006D333A /* GADRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADRequest.h; sourceTree = "<group>"; };
+		3FC78496199D73C6006D333A /* GADRequestError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADRequestError.h; sourceTree = "<group>"; };
+		3FC78497199D73C6006D333A /* libGoogleAdMobAds.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAdMobAds.a; sourceTree = "<group>"; };
+		3FC78499199D73C6006D333A /* CGFloat+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extensions.swift"; sourceTree = "<group>"; };
+		3FC7849A199D73C6006D333A /* CGPoint+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPoint+Extensions.swift"; sourceTree = "<group>"; };
+		3FC7849B199D73C6006D333A /* CGVector+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGVector+Extensions.swift"; sourceTree = "<group>"; };
+		3FC7849C199D73C6006D333A /* Double+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+Extensions.swift"; sourceTree = "<group>"; };
+		3FC7849D199D73C6006D333A /* Int+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+Extensions.swift"; sourceTree = "<group>"; };
+		3FC7849E199D73C6006D333A /* SKAction+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKAction+Extensions.swift"; sourceTree = "<group>"; };
+		3FC7849F199D73C6006D333A /* SKAction+SpecialEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKAction+SpecialEffects.swift"; sourceTree = "<group>"; };
+		3FC784A0199D73C6006D333A /* SKColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKColor+Extensions.swift"; sourceTree = "<group>"; };
+		3FC784A1199D73C6006D333A /* SKEmitterNode+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKEmitterNode+Extensions.swift"; sourceTree = "<group>"; };
+		3FC784A2199D73C6006D333A /* SKNode+DebugDraw.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKNode+DebugDraw.swift"; sourceTree = "<group>"; };
+		3FC784A3199D73C6006D333A /* SKNode+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKNode+Extensions.swift"; sourceTree = "<group>"; };
+		3FC784A4199D73C6006D333A /* SKTAudio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKTAudio.swift; sourceTree = "<group>"; };
+		3FC784A5199D73C6006D333A /* SKTEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKTEffects.swift; sourceTree = "<group>"; };
+		3FC784A6199D73C6006D333A /* SKTTimingFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKTTimingFunctions.swift; sourceTree = "<group>"; };
+		3FC784A7199D73C6006D333A /* Vector3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector3.swift; sourceTree = "<group>"; };
+		3FC784AA199D73C6006D333A /* Artwork.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Artwork.1.png; sourceTree = "<group>"; };
+		3FC784AB199D73C6006D333A /* Artwork.1@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Artwork.1@2x~ipad.png"; sourceTree = "<group>"; };
+		3FC784AC199D73C6006D333A /* Artwork.1@2x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Artwork.1@2x~iphone.png"; sourceTree = "<group>"; };
+		3FC784AD199D73C6006D333A /* Artwork.1~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Artwork.1~ipad.png"; sourceTree = "<group>"; };
+		3FC784AE199D73C6006D333A /* Artwork.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Artwork.plist; sourceTree = "<group>"; };
+		3FC784B0199D73C6006D333A /* ScoreFont.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = ScoreFont.atlas; sourceTree = "<group>"; };
+		3FC784B1199D73C6006D333A /* ScoreFont.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ScoreFont.xml; sourceTree = "<group>"; };
+		3FC784B2199D73C6006D333A /* ScoreFont@2x.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "ScoreFont@2x.xml"; sourceTree = "<group>"; };
+		3FC784B3199D73C6006D333A /* ScoreFont@2x~ipad.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "ScoreFont@2x~ipad.xml"; sourceTree = "<group>"; };
+		3FC784B4199D73C6006D333A /* ScoreFont~ipad.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "ScoreFont~ipad.xml"; sourceTree = "<group>"; };
+		3FC784B6199D73C6006D333A /* gamemusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = gamemusic.mp3; sourceTree = "<group>"; };
+		3FC784B8199D73C6006D333A /* bounce.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = bounce.caf; sourceTree = "<group>"; };
+		3FC784B9199D73C6006D333A /* coin.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = coin.caf; sourceTree = "<group>"; };
+		3FC784BA199D73C6006D333A /* falling.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = falling.caf; sourceTree = "<group>"; };
+		3FC784BB199D73C6006D333A /* flying.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = flying.caf; sourceTree = "<group>"; };
+		3FC784BC199D73C6006D333A /* hitGround.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = hitGround.caf; sourceTree = "<group>"; };
+		3FC784BD199D73C6006D333A /* oink.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = oink.caf; sourceTree = "<group>"; };
+		3FC784BE199D73C6006D333A /* pop.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = pop.caf; sourceTree = "<group>"; };
+		3FC784BF199D73C6006D333A /* whack.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = whack.caf; sourceTree = "<group>"; };
+		3FC784E8199D7433006D333A /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		3FC784EA199D7487006D333A /* MenuScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
+		3FC784EF199D8D81006D333A /* PippinFree-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PippinFree-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,11 +169,10 @@
 		3FC7845B199D72C1006D333A /* PippinFree */ = {
 			isa = PBXGroup;
 			children = (
-				3FC7845E199D72C1006D333A /* AppDelegate.swift */,
-				3FC78460199D72C1006D333A /* GameScene.sks */,
-				3FC78462199D72C1006D333A /* GameScene.swift */,
-				3FC78464199D72C1006D333A /* GameViewController.swift */,
-				3FC78466199D72C1006D333A /* Main.storyboard */,
+				3FC78484199D73C6006D333A /* Library */,
+				3FC784A8199D73C6006D333A /* Resources */,
+				3FC7847F199D7389006D333A /* Storyboards */,
+				3FC78480199D73C6006D333A /* Classes */,
 				3FC78469199D72C1006D333A /* Images.xcassets */,
 				3FC7845C199D72C1006D333A /* Supporting Files */,
 			);
@@ -113,6 +202,172 @@
 				3FC78474199D72C1006D333A /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3FC7847F199D7389006D333A /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				3FC78466199D72C1006D333A /* Main.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		3FC78480199D73C6006D333A /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				3FC784EE199D75CF006D333A /* Utilities */,
+				3FC784ED199D75B5006D333A /* ViewController */,
+				3FC784EC199D75A7006D333A /* Scenes */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		3FC78484199D73C6006D333A /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				3FC78485199D73C6006D333A /* BMGlyphLabel */,
+				3FC7848A199D73C6006D333A /* GAdMob */,
+				3FC78498199D73C6006D333A /* SKTUtils */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		3FC78485199D73C6006D333A /* BMGlyphLabel */ = {
+			isa = PBXGroup;
+			children = (
+				3FC78486199D73C6006D333A /* BMGlyphFont.h */,
+				3FC78487199D73C6006D333A /* BMGlyphFont.m */,
+				3FC78488199D73C6006D333A /* BMGlyphLabel.h */,
+				3FC78489199D73C6006D333A /* BMGlyphLabel.m */,
+			);
+			path = BMGlyphLabel;
+			sourceTree = "<group>";
+		};
+		3FC7848A199D73C6006D333A /* GAdMob */ = {
+			isa = PBXGroup;
+			children = (
+				3FC7848B199D73C6006D333A /* GADAdMobExtras.h */,
+				3FC7848C199D73C6006D333A /* GADAdNetworkExtras.h */,
+				3FC7848D199D73C6006D333A /* GADAdSize.h */,
+				3FC7848E199D73C6006D333A /* GADBannerView.h */,
+				3FC7848F199D73C6006D333A /* GADBannerViewDelegate.h */,
+				3FC78490199D73C6006D333A /* GADInAppPurchase.h */,
+				3FC78491199D73C6006D333A /* GADInAppPurchaseDelegate.h */,
+				3FC78492199D73C6006D333A /* GADInterstitial.h */,
+				3FC78493199D73C6006D333A /* GADInterstitialDelegate.h */,
+				3FC78494199D73C6006D333A /* GADModules.h */,
+				3FC78495199D73C6006D333A /* GADRequest.h */,
+				3FC78496199D73C6006D333A /* GADRequestError.h */,
+				3FC78497199D73C6006D333A /* libGoogleAdMobAds.a */,
+			);
+			path = GAdMob;
+			sourceTree = "<group>";
+		};
+		3FC78498199D73C6006D333A /* SKTUtils */ = {
+			isa = PBXGroup;
+			children = (
+				3FC78499199D73C6006D333A /* CGFloat+Extensions.swift */,
+				3FC7849A199D73C6006D333A /* CGPoint+Extensions.swift */,
+				3FC7849B199D73C6006D333A /* CGVector+Extensions.swift */,
+				3FC7849C199D73C6006D333A /* Double+Extensions.swift */,
+				3FC7849D199D73C6006D333A /* Int+Extensions.swift */,
+				3FC7849E199D73C6006D333A /* SKAction+Extensions.swift */,
+				3FC7849F199D73C6006D333A /* SKAction+SpecialEffects.swift */,
+				3FC784A0199D73C6006D333A /* SKColor+Extensions.swift */,
+				3FC784A1199D73C6006D333A /* SKEmitterNode+Extensions.swift */,
+				3FC784A2199D73C6006D333A /* SKNode+DebugDraw.swift */,
+				3FC784A3199D73C6006D333A /* SKNode+Extensions.swift */,
+				3FC784A4199D73C6006D333A /* SKTAudio.swift */,
+				3FC784A5199D73C6006D333A /* SKTEffects.swift */,
+				3FC784A6199D73C6006D333A /* SKTTimingFunctions.swift */,
+				3FC784A7199D73C6006D333A /* Vector3.swift */,
+			);
+			path = SKTUtils;
+			sourceTree = "<group>";
+		};
+		3FC784A8199D73C6006D333A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3FC784A9199D73C6006D333A /* Artwork.atlasc */,
+				3FC784AF199D73C6006D333A /* Fonts */,
+				3FC784B5199D73C6006D333A /* Music */,
+				3FC784B7199D73C6006D333A /* Sounds */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		3FC784A9199D73C6006D333A /* Artwork.atlasc */ = {
+			isa = PBXGroup;
+			children = (
+				3FC784AA199D73C6006D333A /* Artwork.1.png */,
+				3FC784AB199D73C6006D333A /* Artwork.1@2x~ipad.png */,
+				3FC784AC199D73C6006D333A /* Artwork.1@2x~iphone.png */,
+				3FC784AD199D73C6006D333A /* Artwork.1~ipad.png */,
+				3FC784AE199D73C6006D333A /* Artwork.plist */,
+			);
+			path = Artwork.atlasc;
+			sourceTree = "<group>";
+		};
+		3FC784AF199D73C6006D333A /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				3FC784B0199D73C6006D333A /* ScoreFont.atlas */,
+				3FC784B1199D73C6006D333A /* ScoreFont.xml */,
+				3FC784B2199D73C6006D333A /* ScoreFont@2x.xml */,
+				3FC784B3199D73C6006D333A /* ScoreFont@2x~ipad.xml */,
+				3FC784B4199D73C6006D333A /* ScoreFont~ipad.xml */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		3FC784B5199D73C6006D333A /* Music */ = {
+			isa = PBXGroup;
+			children = (
+				3FC784B6199D73C6006D333A /* gamemusic.mp3 */,
+			);
+			path = Music;
+			sourceTree = "<group>";
+		};
+		3FC784B7199D73C6006D333A /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				3FC784B8199D73C6006D333A /* bounce.caf */,
+				3FC784B9199D73C6006D333A /* coin.caf */,
+				3FC784BA199D73C6006D333A /* falling.caf */,
+				3FC784BB199D73C6006D333A /* flying.caf */,
+				3FC784BC199D73C6006D333A /* hitGround.caf */,
+				3FC784BD199D73C6006D333A /* oink.caf */,
+				3FC784BE199D73C6006D333A /* pop.caf */,
+				3FC784BF199D73C6006D333A /* whack.caf */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
+		3FC784EC199D75A7006D333A /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				3FC784EA199D7487006D333A /* MenuScene.swift */,
+				3FC78482199D73C6006D333A /* GameScene.swift */,
+			);
+			name = Scenes;
+			sourceTree = "<group>";
+		};
+		3FC784ED199D75B5006D333A /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3FC78481199D73C6006D333A /* AppDelegate.swift */,
+				3FC78483199D73C6006D333A /* GameViewController.swift */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		3FC784EE199D75CF006D333A /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				3FC784E8199D7433006D333A /* Constants.swift */,
+				3FC784EF199D8D81006D333A /* PippinFree-Bridging-Header.h */,
+			);
+			name = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,9 +450,27 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FC784E2199D73C6006D333A /* falling.caf in Resources */,
+				3FC784E0199D73C6006D333A /* bounce.caf in Resources */,
+				3FC784E7199D73C6006D333A /* whack.caf in Resources */,
+				3FC784DC199D73C6006D333A /* ScoreFont@2x.xml in Resources */,
+				3FC784D8199D73C6006D333A /* Artwork.1~ipad.png in Resources */,
+				3FC784E1199D73C6006D333A /* coin.caf in Resources */,
 				3FC7846A199D72C1006D333A /* Images.xcassets in Resources */,
-				3FC78461199D72C1006D333A /* GameScene.sks in Resources */,
+				3FC784D9199D73C6006D333A /* Artwork.plist in Resources */,
+				3FC784DB199D73C6006D333A /* ScoreFont.xml in Resources */,
+				3FC784D7199D73C6006D333A /* Artwork.1@2x~iphone.png in Resources */,
+				3FC784E5199D73C6006D333A /* oink.caf in Resources */,
+				3FC784E4199D73C6006D333A /* hitGround.caf in Resources */,
+				3FC784DD199D73C6006D333A /* ScoreFont@2x~ipad.xml in Resources */,
+				3FC784D5199D73C6006D333A /* Artwork.1.png in Resources */,
+				3FC784DE199D73C6006D333A /* ScoreFont~ipad.xml in Resources */,
+				3FC784DA199D73C6006D333A /* ScoreFont.atlas in Resources */,
+				3FC784E3199D73C6006D333A /* flying.caf in Resources */,
+				3FC784DF199D73C6006D333A /* gamemusic.mp3 in Resources */,
 				3FC78468199D72C1006D333A /* Main.storyboard in Resources */,
+				3FC784E6199D73C6006D333A /* pop.caf in Resources */,
+				3FC784D6199D73C6006D333A /* Artwork.1@2x~ipad.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,9 +488,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3FC78463199D72C1006D333A /* GameScene.swift in Sources */,
-				3FC78465199D72C1006D333A /* GameViewController.swift in Sources */,
-				3FC7845F199D72C1006D333A /* AppDelegate.swift in Sources */,
+				3FC784C7199D73C6006D333A /* CGPoint+Extensions.swift in Sources */,
+				3FC784D0199D73C6006D333A /* SKNode+Extensions.swift in Sources */,
+				3FC784D3199D73C6006D333A /* SKTTimingFunctions.swift in Sources */,
+				3FC784C1199D73C6006D333A /* GameScene.swift in Sources */,
+				3FC784C2199D73C6006D333A /* GameViewController.swift in Sources */,
+				3FC784C9199D73C6006D333A /* Double+Extensions.swift in Sources */,
+				3FC784C4199D73C6006D333A /* BMGlyphLabel.m in Sources */,
+				3FC784D1199D73C6006D333A /* SKTAudio.swift in Sources */,
+				3FC784D2199D73C6006D333A /* SKTEffects.swift in Sources */,
+				3FC784C8199D73C6006D333A /* CGVector+Extensions.swift in Sources */,
+				3FC784CE199D73C6006D333A /* SKEmitterNode+Extensions.swift in Sources */,
+				3FC784E9199D7433006D333A /* Constants.swift in Sources */,
+				3FC784C3199D73C6006D333A /* BMGlyphFont.m in Sources */,
+				3FC784EB199D7487006D333A /* MenuScene.swift in Sources */,
+				3FC784CB199D73C6006D333A /* SKAction+Extensions.swift in Sources */,
+				3FC784CC199D73C6006D333A /* SKAction+SpecialEffects.swift in Sources */,
+				3FC784C6199D73C6006D333A /* CGFloat+Extensions.swift in Sources */,
+				3FC784C0199D73C6006D333A /* AppDelegate.swift in Sources */,
+				3FC784CA199D73C6006D333A /* Int+Extensions.swift in Sources */,
+				3FC784CF199D73C6006D333A /* SKNode+DebugDraw.swift in Sources */,
+				3FC784D4199D73C6006D333A /* Vector3.swift in Sources */,
+				3FC784CD199D73C6006D333A /* SKColor+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,8 +628,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = PippinFree/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/PippinFree/Library/GAdMob",
+				);
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PippinFree/Classes/PippinFree-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -347,8 +646,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = PippinFree/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/PippinFree/Library/GAdMob",
+				);
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PippinFree/Classes/PippinFree-Bridging-Header.h";
 			};
 			name = Release;
 		};

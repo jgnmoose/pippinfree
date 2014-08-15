@@ -1,0 +1,21 @@
+<?xml version='1.0'?>
+   <font>
+       <info aa='1' size='72' smooth='1' stretchH='100' bold='0' padding='0,0,0,0' spacing='0,0' charset='' italic='0' unicode='0' face='04b_19'/>
+       <common scaleW='320' packed='0' pages='1' lineHeight='97' scaleH='320' base='93'/>
+       <pages>
+            <page id='0' file='ScoreFont@2x.png'/>
+       </pages>
+        <chars count='11'>
+            <char xadvance='31' x='2' chnl='0' yoffset='61' y='260' xoffset='0' id='32' page='0' height='0' width='0'/>
+            <char xadvance='42' x='134' chnl='0' yoffset='5' y='88' xoffset='0' id='48' page='0' height='84' width='64'/>
+            <char xadvance='26' x='266' chnl='0' yoffset='5' y='2' xoffset='0' id='49' page='0' height='84' width='48'/>
+            <char xadvance='42' x='68' chnl='0' yoffset='5' y='174' xoffset='0' id='50' page='0' height='84' width='64'/>
+            <char xadvance='42' x='68' chnl='0' yoffset='5' y='88' xoffset='0' id='51' page='0' height='84' width='64'/>
+            <char xadvance='42' x='200' chnl='0' yoffset='5' y='2' xoffset='0' id='52' page='0' height='84' width='64'/>
+            <char xadvance='42' x='134' chnl='0' yoffset='5' y='2' xoffset='0' id='53' page='0' height='84' width='64'/>
+            <char xadvance='42' x='68' chnl='0' yoffset='5' y='2' xoffset='0' id='54' page='0' height='84' width='64'/>
+            <char xadvance='42' x='2' chnl='0' yoffset='5' y='174' xoffset='0' id='55' page='0' height='84' width='64'/>
+            <char xadvance='42' x='2' chnl='0' yoffset='5' y='88' xoffset='0' id='56' page='0' height='84' width='64'/>
+            <char xadvance='42' x='2' chnl='0' yoffset='5' y='2' xoffset='0' id='57' page='0' height='84' width='64'/>
+       </chars>
+   </font>
