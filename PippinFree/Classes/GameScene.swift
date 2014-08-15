@@ -18,6 +18,7 @@ class GameScene: SKScene {
     }
     
     override func didMoveToView(view: SKView) {
+        self.setupWorld()
     }
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {

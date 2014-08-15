@@ -18,3 +18,19 @@ func SKColorFromRBG (rbgValue: Int) -> SKColor {
 }
 
 let kBGColor = 0x5CA1E7
+
+// MARK: Sound Effects
+let kSoundBounce = "bounce.caf"
+let kSoundCoin = "coin.caf"
+let kSoundFalling = "falling.caf"
+let kSoundFlying = "flying.caf"
+let kSoundHitGround = "hitGround.caf"
+let kSoundOink = "oink.caf"
+let kSoundPop = "pop.caf"
+let kSoundWhack = "whack.caf"
+
+// MARK: Music
+let kMusicGame = "gamemusic.mp3"
+
+// MARK: Object Names
+let kNameForeground = "Foreground"

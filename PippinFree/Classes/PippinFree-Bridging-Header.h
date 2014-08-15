@@ -9,6 +9,8 @@
 #ifndef PippinFree_PippinFree_Bridging_Header_h
 #define PippinFree_PippinFree_Bridging_Header_h
 
-//#import "GADBannerView.h"
+#import "Artwork.h"
+#import "BMGlyphFont.h"
+#import "BMGlyphLabel.h"
 
 #endif

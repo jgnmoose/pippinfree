@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F094858199E5CCF0059D44A /* GameTextures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F094857199E5CCF0059D44A /* GameTextures.swift */; };
+		3F09485A199E5CDE0059D44A /* GameSounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F094859199E5CDE0059D44A /* GameSounds.swift */; };
+		3F09485D199E5CF00059D44A /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F09485C199E5CF00059D44A /* Player.swift */; };
+		3F09485F199E5CFF0059D44A /* Spike.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F09485E199E5CFF0059D44A /* Spike.swift */; };
+		3F094862199E8B9D0059D44A /* Foreground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F094861199E8B9D0059D44A /* Foreground.swift */; };
 		3FC78468199D72C1006D333A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FC78466199D72C1006D333A /* Main.storyboard */; };
 		3FC7846A199D72C1006D333A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FC78469199D72C1006D333A /* Images.xcassets */; };
 		3FC78476199D72C1006D333A /* PippinFreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC78475199D72C1006D333A /* PippinFreeTests.swift */; };
@@ -64,6 +69,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3F094857199E5CCF0059D44A /* GameTextures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameTextures.swift; sourceTree = "<group>"; };
+		3F094859199E5CDE0059D44A /* GameSounds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameSounds.swift; sourceTree = "<group>"; };
+		3F09485C199E5CF00059D44A /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		3F09485E199E5CFF0059D44A /* Spike.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spike.swift; sourceTree = "<group>"; };
+		3F094861199E8B9D0059D44A /* Foreground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Foreground.swift; sourceTree = "<group>"; };
 		3FC78459199D72C1006D333A /* PippinFree.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PippinFree.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FC7845D199D72C1006D333A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3FC78467199D72C1006D333A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -128,6 +138,7 @@
 		3FC784E8199D7433006D333A /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3FC784EA199D7487006D333A /* MenuScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
 		3FC784EF199D8D81006D333A /* PippinFree-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PippinFree-Bridging-Header.h"; sourceTree = "<group>"; };
+		3FC784F0199D9AB7006D333A /* Artwork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Artwork.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +159,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F09485B199E5CE60059D44A /* Actors */ = {
+			isa = PBXGroup;
+			children = (
+				3F09485C199E5CF00059D44A /* Player.swift */,
+			);
+			name = Actors;
+			sourceTree = "<group>";
+		};
+		3F094860199E8B890059D44A /* Scene Objects */ = {
+			isa = PBXGroup;
+			children = (
+				3F09485E199E5CFF0059D44A /* Spike.swift */,
+				3F094861199E8B9D0059D44A /* Foreground.swift */,
+			);
+			name = "Scene Objects";
+			sourceTree = "<group>";
+		};
 		3FC78450199D72C0006D333A = {
 			isa = PBXGroup;
 			children = (
@@ -215,6 +243,8 @@
 		3FC78480199D73C6006D333A /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				3F094860199E8B890059D44A /* Scene Objects */,
+				3F09485B199E5CE60059D44A /* Actors */,
 				3FC784EE199D75CF006D333A /* Utilities */,
 				3FC784ED199D75B5006D333A /* ViewController */,
 				3FC784EC199D75A7006D333A /* Scenes */,
@@ -299,6 +329,7 @@
 		3FC784A9199D73C6006D333A /* Artwork.atlasc */ = {
 			isa = PBXGroup;
 			children = (
+				3FC784F0199D9AB7006D333A /* Artwork.h */,
 				3FC784AA199D73C6006D333A /* Artwork.1.png */,
 				3FC784AB199D73C6006D333A /* Artwork.1@2x~ipad.png */,
 				3FC784AC199D73C6006D333A /* Artwork.1@2x~iphone.png */,
@@ -365,6 +396,8 @@
 			isa = PBXGroup;
 			children = (
 				3FC784E8199D7433006D333A /* Constants.swift */,
+				3F094857199E5CCF0059D44A /* GameTextures.swift */,
+				3F094859199E5CDE0059D44A /* GameSounds.swift */,
 				3FC784EF199D8D81006D333A /* PippinFree-Bridging-Header.h */,
 			);
 			name = Utilities;
@@ -492,6 +525,7 @@
 				3FC784D0199D73C6006D333A /* SKNode+Extensions.swift in Sources */,
 				3FC784D3199D73C6006D333A /* SKTTimingFunctions.swift in Sources */,
 				3FC784C1199D73C6006D333A /* GameScene.swift in Sources */,
+				3F094862199E8B9D0059D44A /* Foreground.swift in Sources */,
 				3FC784C2199D73C6006D333A /* GameViewController.swift in Sources */,
 				3FC784C9199D73C6006D333A /* Double+Extensions.swift in Sources */,
 				3FC784C4199D73C6006D333A /* BMGlyphLabel.m in Sources */,
@@ -501,10 +535,14 @@
 				3FC784CE199D73C6006D333A /* SKEmitterNode+Extensions.swift in Sources */,
 				3FC784E9199D7433006D333A /* Constants.swift in Sources */,
 				3FC784C3199D73C6006D333A /* BMGlyphFont.m in Sources */,
+				3F094858199E5CCF0059D44A /* GameTextures.swift in Sources */,
 				3FC784EB199D7487006D333A /* MenuScene.swift in Sources */,
 				3FC784CB199D73C6006D333A /* SKAction+Extensions.swift in Sources */,
 				3FC784CC199D73C6006D333A /* SKAction+SpecialEffects.swift in Sources */,
+				3F09485A199E5CDE0059D44A /* GameSounds.swift in Sources */,
+				3F09485D199E5CF00059D44A /* Player.swift in Sources */,
 				3FC784C6199D73C6006D333A /* CGFloat+Extensions.swift in Sources */,
+				3F09485F199E5CFF0059D44A /* Spike.swift in Sources */,
 				3FC784C0199D73C6006D333A /* AppDelegate.swift in Sources */,
 				3FC784CA199D73C6006D333A /* Int+Extensions.swift in Sources */,
 				3FC784CF199D73C6006D333A /* SKNode+DebugDraw.swift in Sources */,
@@ -711,6 +749,7 @@
 				3FC7847B199D72C1006D333A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3FC7847C199D72C1006D333A /* Build configuration list for PBXNativeTarget "PippinFreeTests" */ = {
 			isa = XCConfigurationList;
@@ -719,6 +758,7 @@
 				3FC7847E199D72C1006D333A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
