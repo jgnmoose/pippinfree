@@ -10,7 +10,7 @@ import SpriteKit
 
 class Spike {
     
-    private let viewSize = UIScreen.mainScreen().bounds
+    private let viewSize = UIScreen.mainScreen().bounds.size
     
     
 }

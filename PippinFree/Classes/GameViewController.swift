@@ -30,7 +30,7 @@ class GameViewController: UIViewController {
 //        }
         
         let skView = self.view as SKView
-        skView.ignoresSiblingOrder = true
+        skView.ignoresSiblingOrder = false
         
         if kDebug {
             skView.showsFPS = true

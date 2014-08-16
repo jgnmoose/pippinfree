@@ -11,8 +11,10 @@
 		3F09485A199E5CDE0059D44A /* GameSounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F094859199E5CDE0059D44A /* GameSounds.swift */; };
 		3F09485D199E5CF00059D44A /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F09485C199E5CF00059D44A /* Player.swift */; };
 		3F09485F199E5CFF0059D44A /* Spike.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F09485E199E5CFF0059D44A /* Spike.swift */; };
-		3F094862199E8B9D0059D44A /* Foreground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F094861199E8B9D0059D44A /* Foreground.swift */; };
+		3F094862199E8B9D0059D44A /* Ground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F094861199E8B9D0059D44A /* Ground.swift */; };
 		3FB6A5B7199FE17C00463876 /* Hils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB6A5B6199FE17C00463876 /* Hils.swift */; };
+		3FB6A5B9199FE97500463876 /* Clouds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB6A5B8199FE97500463876 /* Clouds.swift */; };
+		3FB6A5BB199FF4AF00463876 /* GameSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB6A5BA199FF4AF00463876 /* GameSettings.swift */; };
 		3FC78468199D72C1006D333A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FC78466199D72C1006D333A /* Main.storyboard */; };
 		3FC7846A199D72C1006D333A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FC78469199D72C1006D333A /* Images.xcassets */; };
 		3FC78476199D72C1006D333A /* PippinFreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC78475199D72C1006D333A /* PippinFreeTests.swift */; };
@@ -74,8 +76,10 @@
 		3F094859199E5CDE0059D44A /* GameSounds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameSounds.swift; sourceTree = "<group>"; };
 		3F09485C199E5CF00059D44A /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		3F09485E199E5CFF0059D44A /* Spike.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spike.swift; sourceTree = "<group>"; };
-		3F094861199E8B9D0059D44A /* Foreground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Foreground.swift; sourceTree = "<group>"; };
+		3F094861199E8B9D0059D44A /* Ground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ground.swift; sourceTree = "<group>"; };
 		3FB6A5B6199FE17C00463876 /* Hils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hils.swift; sourceTree = "<group>"; };
+		3FB6A5B8199FE97500463876 /* Clouds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Clouds.swift; sourceTree = "<group>"; };
+		3FB6A5BA199FF4AF00463876 /* GameSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameSettings.swift; sourceTree = "<group>"; };
 		3FC78459199D72C1006D333A /* PippinFree.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PippinFree.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FC7845D199D72C1006D333A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3FC78467199D72C1006D333A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -160,8 +164,9 @@
 			isa = PBXGroup;
 			children = (
 				3F09485E199E5CFF0059D44A /* Spike.swift */,
-				3F094861199E8B9D0059D44A /* Foreground.swift */,
+				3F094861199E8B9D0059D44A /* Ground.swift */,
 				3FB6A5B6199FE17C00463876 /* Hils.swift */,
+				3FB6A5B8199FE97500463876 /* Clouds.swift */,
 			);
 			name = "Scene Objects";
 			sourceTree = "<group>";
@@ -367,6 +372,7 @@
 				3FC784E8199D7433006D333A /* Constants.swift */,
 				3F094857199E5CCF0059D44A /* GameTextures.swift */,
 				3F094859199E5CDE0059D44A /* GameSounds.swift */,
+				3FB6A5BA199FF4AF00463876 /* GameSettings.swift */,
 				3FC784EF199D8D81006D333A /* PippinFree-Bridging-Header.h */,
 			);
 			name = Utilities;
@@ -492,15 +498,17 @@
 			files = (
 				3FC784C7199D73C6006D333A /* CGPoint+Extensions.swift in Sources */,
 				3FC784D0199D73C6006D333A /* SKNode+Extensions.swift in Sources */,
+				3FB6A5BB199FF4AF00463876 /* GameSettings.swift in Sources */,
 				3FC784D3199D73C6006D333A /* SKTTimingFunctions.swift in Sources */,
 				3FC784C1199D73C6006D333A /* GameScene.swift in Sources */,
-				3F094862199E8B9D0059D44A /* Foreground.swift in Sources */,
+				3F094862199E8B9D0059D44A /* Ground.swift in Sources */,
 				3FC784C2199D73C6006D333A /* GameViewController.swift in Sources */,
 				3FC784C9199D73C6006D333A /* Double+Extensions.swift in Sources */,
 				3FC784C4199D73C6006D333A /* BMGlyphLabel.m in Sources */,
 				3FC784D1199D73C6006D333A /* SKTAudio.swift in Sources */,
 				3FB6A5B7199FE17C00463876 /* Hils.swift in Sources */,
 				3FC784D2199D73C6006D333A /* SKTEffects.swift in Sources */,
+				3FB6A5B9199FE97500463876 /* Clouds.swift in Sources */,
 				3FC784C8199D73C6006D333A /* CGVector+Extensions.swift in Sources */,
 				3FC784CE199D73C6006D333A /* SKEmitterNode+Extensions.swift in Sources */,
 				3FC784E9199D7433006D333A /* Constants.swift in Sources */,
