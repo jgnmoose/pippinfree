@@ -6,4 +6,11 @@
 //  Copyright (c) 2014 Jeremy Novak. All rights reserved.
 //
 
-import Foundation
+import SpriteKit
+
+class Spike {
+    
+    private let viewSize = UIScreen.mainScreen().bounds
+    
+    
+}

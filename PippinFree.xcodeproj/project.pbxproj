@@ -12,6 +12,7 @@
 		3F09485D199E5CF00059D44A /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F09485C199E5CF00059D44A /* Player.swift */; };
 		3F09485F199E5CFF0059D44A /* Spike.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F09485E199E5CFF0059D44A /* Spike.swift */; };
 		3F094862199E8B9D0059D44A /* Foreground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F094861199E8B9D0059D44A /* Foreground.swift */; };
+		3FB6A5B7199FE17C00463876 /* Hils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB6A5B6199FE17C00463876 /* Hils.swift */; };
 		3FC78468199D72C1006D333A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FC78466199D72C1006D333A /* Main.storyboard */; };
 		3FC7846A199D72C1006D333A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FC78469199D72C1006D333A /* Images.xcassets */; };
 		3FC78476199D72C1006D333A /* PippinFreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC78475199D72C1006D333A /* PippinFreeTests.swift */; };
@@ -74,6 +75,7 @@
 		3F09485C199E5CF00059D44A /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		3F09485E199E5CFF0059D44A /* Spike.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spike.swift; sourceTree = "<group>"; };
 		3F094861199E8B9D0059D44A /* Foreground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Foreground.swift; sourceTree = "<group>"; };
+		3FB6A5B6199FE17C00463876 /* Hils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hils.swift; sourceTree = "<group>"; };
 		3FC78459199D72C1006D333A /* PippinFree.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PippinFree.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FC7845D199D72C1006D333A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3FC78467199D72C1006D333A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -88,19 +90,6 @@
 		3FC78487199D73C6006D333A /* BMGlyphFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMGlyphFont.m; sourceTree = "<group>"; };
 		3FC78488199D73C6006D333A /* BMGlyphLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMGlyphLabel.h; sourceTree = "<group>"; };
 		3FC78489199D73C6006D333A /* BMGlyphLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMGlyphLabel.m; sourceTree = "<group>"; };
-		3FC7848B199D73C6006D333A /* GADAdMobExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADAdMobExtras.h; sourceTree = "<group>"; };
-		3FC7848C199D73C6006D333A /* GADAdNetworkExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADAdNetworkExtras.h; sourceTree = "<group>"; };
-		3FC7848D199D73C6006D333A /* GADAdSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADAdSize.h; sourceTree = "<group>"; };
-		3FC7848E199D73C6006D333A /* GADBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADBannerView.h; sourceTree = "<group>"; };
-		3FC7848F199D73C6006D333A /* GADBannerViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADBannerViewDelegate.h; sourceTree = "<group>"; };
-		3FC78490199D73C6006D333A /* GADInAppPurchase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADInAppPurchase.h; sourceTree = "<group>"; };
-		3FC78491199D73C6006D333A /* GADInAppPurchaseDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADInAppPurchaseDelegate.h; sourceTree = "<group>"; };
-		3FC78492199D73C6006D333A /* GADInterstitial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADInterstitial.h; sourceTree = "<group>"; };
-		3FC78493199D73C6006D333A /* GADInterstitialDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADInterstitialDelegate.h; sourceTree = "<group>"; };
-		3FC78494199D73C6006D333A /* GADModules.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADModules.h; sourceTree = "<group>"; };
-		3FC78495199D73C6006D333A /* GADRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADRequest.h; sourceTree = "<group>"; };
-		3FC78496199D73C6006D333A /* GADRequestError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADRequestError.h; sourceTree = "<group>"; };
-		3FC78497199D73C6006D333A /* libGoogleAdMobAds.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAdMobAds.a; sourceTree = "<group>"; };
 		3FC78499199D73C6006D333A /* CGFloat+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extensions.swift"; sourceTree = "<group>"; };
 		3FC7849A199D73C6006D333A /* CGPoint+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPoint+Extensions.swift"; sourceTree = "<group>"; };
 		3FC7849B199D73C6006D333A /* CGVector+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGVector+Extensions.swift"; sourceTree = "<group>"; };
@@ -172,6 +161,7 @@
 			children = (
 				3F09485E199E5CFF0059D44A /* Spike.swift */,
 				3F094861199E8B9D0059D44A /* Foreground.swift */,
+				3FB6A5B6199FE17C00463876 /* Hils.swift */,
 			);
 			name = "Scene Objects";
 			sourceTree = "<group>";
@@ -256,7 +246,6 @@
 			isa = PBXGroup;
 			children = (
 				3FC78485199D73C6006D333A /* BMGlyphLabel */,
-				3FC7848A199D73C6006D333A /* GAdMob */,
 				3FC78498199D73C6006D333A /* SKTUtils */,
 			);
 			path = Library;
@@ -271,26 +260,6 @@
 				3FC78489199D73C6006D333A /* BMGlyphLabel.m */,
 			);
 			path = BMGlyphLabel;
-			sourceTree = "<group>";
-		};
-		3FC7848A199D73C6006D333A /* GAdMob */ = {
-			isa = PBXGroup;
-			children = (
-				3FC7848B199D73C6006D333A /* GADAdMobExtras.h */,
-				3FC7848C199D73C6006D333A /* GADAdNetworkExtras.h */,
-				3FC7848D199D73C6006D333A /* GADAdSize.h */,
-				3FC7848E199D73C6006D333A /* GADBannerView.h */,
-				3FC7848F199D73C6006D333A /* GADBannerViewDelegate.h */,
-				3FC78490199D73C6006D333A /* GADInAppPurchase.h */,
-				3FC78491199D73C6006D333A /* GADInAppPurchaseDelegate.h */,
-				3FC78492199D73C6006D333A /* GADInterstitial.h */,
-				3FC78493199D73C6006D333A /* GADInterstitialDelegate.h */,
-				3FC78494199D73C6006D333A /* GADModules.h */,
-				3FC78495199D73C6006D333A /* GADRequest.h */,
-				3FC78496199D73C6006D333A /* GADRequestError.h */,
-				3FC78497199D73C6006D333A /* libGoogleAdMobAds.a */,
-			);
-			path = GAdMob;
 			sourceTree = "<group>";
 		};
 		3FC78498199D73C6006D333A /* SKTUtils */ = {
@@ -530,6 +499,7 @@
 				3FC784C9199D73C6006D333A /* Double+Extensions.swift in Sources */,
 				3FC784C4199D73C6006D333A /* BMGlyphLabel.m in Sources */,
 				3FC784D1199D73C6006D333A /* SKTAudio.swift in Sources */,
+				3FB6A5B7199FE17C00463876 /* Hils.swift in Sources */,
 				3FC784D2199D73C6006D333A /* SKTEffects.swift in Sources */,
 				3FC784C8199D73C6006D333A /* CGVector+Extensions.swift in Sources */,
 				3FC784CE199D73C6006D333A /* SKEmitterNode+Extensions.swift in Sources */,
@@ -668,10 +638,7 @@
 				INFOPLIST_FILE = PippinFree/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/PippinFree/Library/GAdMob",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "PippinFree/Classes/PippinFree-Bridging-Header.h";
@@ -686,10 +653,7 @@
 				INFOPLIST_FILE = PippinFree/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/PippinFree/Library/GAdMob",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "PippinFree/Classes/PippinFree-Bridging-Header.h";

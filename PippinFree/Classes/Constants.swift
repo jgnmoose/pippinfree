@@ -34,3 +34,4 @@ let kMusicGame = "gamemusic.mp3"
 
 // MARK: Object Names
 let kNameForeground = "Foreground"
+let kNameHills = "Hills"

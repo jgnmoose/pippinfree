@@ -32,7 +32,7 @@ class Foreground: SKSpriteNode {
         self.position = CGPointZero
         self.name = kNameForeground
         
-        let foregroundCopy = Foreground(imageNamed: "Foreground")
+        let foregroundCopy = Foreground(texture: self.texture)
         foregroundCopy.anchorPoint = CGPointZero
         foregroundCopy.position = CGPoint(x: viewSize.width, y: 0)
         self.addChild(foregroundCopy)

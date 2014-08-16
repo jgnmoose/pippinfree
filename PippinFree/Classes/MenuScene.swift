@@ -11,7 +11,7 @@ import SpriteKit
 class MenuScene: SKScene {
     
     private let textures = GameTexturesSharedInstance
-    private var viewSize:CGSize!
+    private let viewSize = UIScreen.mainScreen().bounds
     
     private var playButton = SKSpriteNode()
     
@@ -25,8 +25,6 @@ class MenuScene: SKScene {
     }
     
     override func didMoveToView(view: SKView) {
-        viewSize = self.frame.size
-        
         self.setupMenu()
     }
     
@@ -48,6 +46,10 @@ class MenuScene: SKScene {
         // Foreground
         let foreground = Foreground()
         self.addChild(foreground)
+        
+        // Hills
+        let hills = Hills()
+        self.addChild(hills)
         
         // Game Logo
         let logo = SKSpriteNode(imageNamed: "Logo")
