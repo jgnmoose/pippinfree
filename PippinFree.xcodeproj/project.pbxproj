@@ -238,11 +238,11 @@
 		3FC78480199D73C6006D333A /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				3F094860199E8B890059D44A /* Scene Objects */,
+				3FC784EC199D75A7006D333A /* Scenes */,
 				3F09485B199E5CE60059D44A /* Actors */,
+				3F094860199E8B890059D44A /* Scene Objects */,
 				3FC784EE199D75CF006D333A /* Utilities */,
 				3FC784ED199D75B5006D333A /* ViewController */,
-				3FC784EC199D75A7006D333A /* Scenes */,
 			);
 			path = Classes;
 			sourceTree = "<group>";

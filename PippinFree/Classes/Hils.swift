@@ -20,7 +20,6 @@ class Hills: SKSpriteNode {
         super.init(texture: texture, color: color, size: size)
     }
     
-    
     convenience override init() {
         let hillsTexture = SKTexture(imageNamed: "Hills")
         self.init(texture: hillsTexture, color: SKColor.whiteColor(), size: hillsTexture.size())
