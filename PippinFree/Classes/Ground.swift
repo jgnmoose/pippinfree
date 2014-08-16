@@ -27,7 +27,7 @@ class Ground: SKSpriteNode {
         self.setupGround()
     }
 
-    func setupGround () {
+    private func setupGround () {
         self.anchorPoint = CGPointZero
         self.position = CGPointZero
         self.zPosition = GameLayer.Ground
@@ -46,7 +46,7 @@ class Ground: SKSpriteNode {
         self.runAction(SKAction.repeatActionForever(sequence))
     }
     
-    func stopGfround () {
+    func stopGround () {
         self.removeAllActions()
     }
     

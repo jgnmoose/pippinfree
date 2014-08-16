@@ -28,7 +28,7 @@ class Clouds: SKSpriteNode {
         self.scrollClouds()
     }
 
-    func setupClouds() {
+    private func setupClouds() {
         self.anchorPoint = CGPointZero
         self.position = CGPointMake(RandomFloatRange(viewSize.width * 0.2, viewSize.height * 0.7), RandomFloatRange(viewSize.height * 0.4, viewSize.height * 0.7))
         self.zPosition = GameLayer.Sky

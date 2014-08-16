@@ -40,10 +40,10 @@ class Contact {
 }
 
 // MARK: Game State
-class GameState {
-    class var Tutorial:UInt8 { return 0 }
-    class var Play:UInt8     { return 1 }
-    class var GameOver:UInt8 { return 2 }
+enum GameState:Int {
+    case Tutorial
+    case Play
+    case GameOver
 }
 
 // MARK: Debug Flags

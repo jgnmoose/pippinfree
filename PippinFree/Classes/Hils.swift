@@ -27,7 +27,7 @@ class Hills: SKSpriteNode {
         self.setupHills()
     }
     
-    func setupHills () {
+    private func setupHills () {
         let ground = SKTexture(imageNamed: "Ground")
         self.anchorPoint = CGPointZero
         self.position = CGPoint(x: 0, y: ground.size().height - ground.size().height * 0.1)

@@ -16,27 +16,35 @@ class Player: SKSpriteNode {
         super.init(coder: aDecoder)
     }
     
-    override init(texture: SKTexture!, color: UIColor!, size: CGSize) {
+    private override init(texture: SKTexture!, color: UIColor!, size: CGSize) {
         super.init(texture: texture, color: color, size: size)
     }
     
     convenience override init() {
         let playerTexture = GameTexturesSharedInstance.textureAtlas.textureNamed("Pippin0")
         self.init(texture: playerTexture, color: SKColor.whiteColor(), size: playerTexture.size())
+        
+        self.setupPlayer()
     }
     
-    func setupPlayer () {
-        self.physicsBody = SKPhysicsBody(circleOfRadius: self.size.width / 2 )
+    private func setupPlayer () {
+        self.position = CGPoint(x: viewSize.width * 0.25, y: viewSize.height * 0.75)
+        self.zPosition = GameLayer.Game
+        self.name = kNamePlayer
+        
+        self.physicsBody = SKPhysicsBody(circleOfRadius: self.size.height / 2 )
         self.physicsBody.categoryBitMask = Contact.Player
         self.physicsBody.collisionBitMask = Contact.Scene
         self.physicsBody.contactTestBitMask = Contact.Scene | Contact.Spike
-        
-        self.name = kNamePlayer
     }
     
     func animate() {
         let animationFrames = [GameTexturesSharedInstance.textureAtlas.textureNamed("Pippin0"), GameTexturesSharedInstance.textureAtlas.textureNamed("Pippin1")]
         self.runAction(SKAction.repeatActionForever(SKAction.animateWithTextures(animationFrames, timePerFrame: 0.15)))
+    }
+    
+    func stopAnimation() {
+        self.removeAllActions()
     }
     
     func update() {
