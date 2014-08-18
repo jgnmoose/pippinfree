@@ -21,6 +21,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     private var score:Int = 0
     private var retry = SKSpriteNode()
     private var leaders = SKSpriteNode()
+    private var scoreHud = BMGlyphLabel()
     
     required init(coder aDecoder: NSCoder!) {
         super.init(coder: aDecoder)
@@ -92,7 +93,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 self.switchToGameOver()
                 
             } else if other.categoryBitMask == Contact.Score {
-                
+                self.updateScore()
             }
         }
     }
@@ -131,6 +132,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         // Bounding box of playable area
         self.physicsBody = SKPhysicsBody(edgeLoopFromRect: CGRectMake(0, ground.size.height, viewSize.width, (viewSize.height - ground.size.height)))
         self.physicsBody.categoryBitMask = Contact.Scene
+        
+        // Score
+        score = 0
+        scoreHud = BMGlyphLabel(text: NSString(format: "%d", score), font: scoreFont)
+        scoreHud.position = CGPoint(x: viewSize.width / 2, y: viewSize.height * 0.85)
+        scoreHud.zPosition = GameLayer.Interface
+        scoreHud.hidden = true
+        worldNode.addChild(scoreHud)
     }
     
     // MARK: State Methods
@@ -177,18 +186,43 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func switchToPlay() {
         state = GameState.Play
         
+        // Set gravity
         self.physicsWorld.gravity = CGVectorMake(0, -5.0)
         
+        // Scroll world and animate player
         ground.scrollGround()
         hills.scrollHills()
+        player.animate()
+        
+        // Unhide Score HUD
+        scoreHud.hidden = false
+        
+        // Spawn Logs
+        let delay = SKAction.waitForDuration(1.0)
+        let spawn = SKAction.runBlock({
+            let logs = Logs()
+            self.worldNode.addChild(logs)
+        })
+        let spawnSequence = SKAction.sequence([delay, spawn])
+        worldNode.runAction(SKAction.repeatActionForever(spawnSequence), withKey: kNameSpawn)
     }
     
     func switchToGameOver() {
         state = GameState.GameOver
         
+        // Stop scrolling and flash/shake background
         self.flashBackground()
         ground.stopGround()
         hills.stopHills()
+        
+        // Hide the Score HUD
+        scoreHud.hidden = true
+        
+        // Stop the Logs
+        worldNode.removeActionForKey(kNameSpawn)
+        worldNode.enumerateChildNodesWithName(kNameLogs, usingBlock: { node, stop in
+            node.removeAllActions()
+        })
         
         // Animate smoke on player
         let smoke = Smoke()
@@ -203,34 +237,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         })
         
         // Game Over
-        let gameOver = SKSpriteNode(texture: GameTexturesSharedInstance.textureAtlas.textureNamed("GameOver"))
-        gameOver.position = CGPoint(x: viewSize.width / 2, y: viewSize.height * 0.8)
-        gameOver.zPosition = GameLayer.Interface
+        let gameOver = GameOver(score: score)
         worldNode.addChild(gameOver)
-        
-        // Update score if higher than best
-        
-        // Current Score
-        let scoreTitle = SKSpriteNode(texture: GameTexturesSharedInstance.textureAtlas.textureNamed("Score"))
-        scoreTitle.position = CGPoint(x: viewSize.width * 0.3, y: viewSize.height * 0.65)
-        scoreTitle.zPosition = GameLayer.Interface
-        worldNode.addChild(scoreTitle)
-        
-        let scoreLabel = BMGlyphLabel(text: NSString(format: "%d", score), font: scoreFont)
-        scoreLabel.position = CGPoint(x: viewSize.width * 0.3, y: viewSize.height * 0.5)
-        scoreLabel.zPosition = GameLayer.Interface
-        worldNode.addChild(scoreLabel)
-        
-        // Best Score
-        let bestScoreTitle = SKSpriteNode(texture: GameTexturesSharedInstance.textureAtlas.textureNamed("BestScore"))
-        bestScoreTitle.position = CGPoint(x: viewSize.width * 0.7, y: viewSize.height * 0.65)
-        bestScoreTitle.zPosition = GameLayer.Interface
-        worldNode.addChild(bestScoreTitle)
-        
-        let bestScoreLabel = BMGlyphLabel(text: NSString(format: "%d", GameSettingsSharedInstance.bestScore), font: scoreFont)
-        bestScoreLabel.position = CGPoint(x: viewSize.width * 0.7, y: viewSize.height * 0.5)
-        bestScoreLabel.zPosition = GameLayer.Interface
-        worldNode.addChild(bestScoreLabel)
         
         // Retry Button
         retry = SKSpriteNode(texture: GameTexturesSharedInstance.textureAtlas.textureNamed("Retry"))
@@ -243,6 +251,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         leaders.position = CGPoint(x: viewSize.width * 0.75, y: viewSize.height * 0.3)
         leaders.zPosition = GameLayer.Interface
         worldNode.addChild(leaders)
+
     }
     
     func switchToNewGame() {
@@ -262,5 +271,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         })
         let flashGroup = SKAction.group([shake, colorBackground])
         self.runAction(flashGroup)
+    }
+    
+    // MARK: Score
+    func updateScore() {
+        score++
+        scoreHud.text = NSString(format: "%d", score)
+        worldNode.runAction(GameSoundsSharedInstance.coin)
+        
+        if score % 5 == 0 {
+            worldNode.runAction(GameSoundsSharedInstance.oink)
+        }
     }
 }

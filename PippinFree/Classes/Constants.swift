@@ -72,6 +72,7 @@ let kNameGround = "Ground"
 let kNameHills = "Hills"
 let kNameLogs = "Logs"
 let kNamePlayer = "Player"
+let kNameSpawn = "SpawnLogs"
 
 // MARK: Object Speeds
 let kSpeedGround = 2.5

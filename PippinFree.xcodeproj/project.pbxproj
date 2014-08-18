@@ -60,6 +60,7 @@
 		3FC784E9199D7433006D333A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC784E8199D7433006D333A /* Constants.swift */; };
 		3FC784EB199D7487006D333A /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC784EA199D7487006D333A /* MenuScene.swift */; };
 		3FDF451C19A2628E0083F53E /* Smoke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDF451B19A2628E0083F53E /* Smoke.swift */; };
+		3FDF451F19A283C10083F53E /* GameOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDF451E19A283C10083F53E /* GameOver.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -134,6 +135,7 @@
 		3FC784EF199D8D81006D333A /* PippinFree-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PippinFree-Bridging-Header.h"; sourceTree = "<group>"; };
 		3FC784F0199D9AB7006D333A /* Artwork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Artwork.h; sourceTree = "<group>"; };
 		3FDF451B19A2628E0083F53E /* Smoke.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Smoke.swift; sourceTree = "<group>"; };
+		3FDF451E19A283C10083F53E /* GameOver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOver.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,6 +245,7 @@
 			children = (
 				3FC784EC199D75A7006D333A /* Scenes */,
 				3F09485B199E5CE60059D44A /* Actors */,
+				3FDF451D19A283A10083F53E /* Scene Nodes */,
 				3F094860199E8B890059D44A /* Scene Objects */,
 				3FC784EE199D75CF006D333A /* Utilities */,
 				3FC784ED199D75B5006D333A /* ViewController */,
@@ -379,6 +382,14 @@
 				3FC784EF199D8D81006D333A /* PippinFree-Bridging-Header.h */,
 			);
 			name = Utilities;
+			sourceTree = "<group>";
+		};
+		3FDF451D19A283A10083F53E /* Scene Nodes */ = {
+			isa = PBXGroup;
+			children = (
+				3FDF451E19A283C10083F53E /* GameOver.swift */,
+			);
+			name = "Scene Nodes";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -530,6 +541,7 @@
 				3FC784CF199D73C6006D333A /* SKNode+DebugDraw.swift in Sources */,
 				3FC784D4199D73C6006D333A /* Vector3.swift in Sources */,
 				3FC784CD199D73C6006D333A /* SKColor+Extensions.swift in Sources */,
+				3FDF451F19A283C10083F53E /* GameOver.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
