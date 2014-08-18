@@ -10,14 +10,17 @@ import SpriteKit
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
     
-    private let textures = GameTexturesSharedInstance
-    private let sounds = GameSoundsSharedInstance
     private let viewSize = UIScreen.mainScreen().bounds.size
     
     private var state = GameState.Tutorial
+    private let worldNode = SKNode()
     private let hills = Hills()
     private let ground = Ground()
     private let player = Player()
+    private let scoreFont = BMGlyphFont(name: "ScoreFont")
+    private var score:Int = 0
+    private var retry = SKSpriteNode()
+    private var leaders = SKSpriteNode()
     
     required init(coder aDecoder: NSCoder!) {
         super.init(coder: aDecoder)
@@ -30,7 +33,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     override func didMoveToView(view: SKView) {
         state = GameState.Tutorial
         
+        self.scene.userInteractionEnabled = false
         self.setupWorld()
+        self.switchToTutorial()
     }
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
@@ -45,7 +50,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 player.fly()
         
             case GameState.GameOver:
-                return
+                if retry.containsPoint(touchLocation) {
+                    self.switchToNewGame()
+                }
             
             default:
                 return
@@ -96,27 +103,30 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.physicsWorld.gravity = CGVectorMake(0, 0)
         self.physicsWorld.contactDelegate = self
         
+        // Add the gameNode to the scene
+        self.addChild(worldNode)
+        
         // Background color
         self.backgroundColor = SKColorFromRBG(kBGColor)
         
         // Sun
-        let sun = SKSpriteNode(texture: textures.textureAtlas.textureNamed("Sun"))
+        let sun = SKSpriteNode(texture: GameTexturesSharedInstance.textureAtlas.textureNamed("Sun"))
         sun.position = CGPoint(x: viewSize.width * 0.15, y: viewSize.height * 0.8)
         sun.zPosition = GameLayer.Sky
-        self.addChild(sun)
+        worldNode.addChild(sun)
         
         // Clouds
         let clouds = Clouds()
-        self.addChild(clouds)
+        worldNode.addChild(clouds)
         
         // Hills
-        self.addChild(hills)
+        worldNode.addChild(hills)
         
         // Ground
-        self.addChild(ground)
+        worldNode.addChild(ground)
         
         // Player
-        self.addChild(player)
+        worldNode.addChild(player)
         
         // Bounding box of playable area
         self.physicsBody = SKPhysicsBody(edgeLoopFromRect: CGRectMake(0, ground.size.height, viewSize.width, (viewSize.height - ground.size.height)))
@@ -126,6 +136,42 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     // MARK: State Methods
     func switchToTutorial() {
         state = GameState.Tutorial
+        
+        // Ready
+        let ready = SKSpriteNode(texture: GameTexturesSharedInstance.textureAtlas.textureNamed("Ready"))
+        ready.position = CGPoint(x: viewSize.width / 2, y: viewSize.height * 0.75)
+        ready.zPosition = GameLayer.Interface
+        ready.setScale(0.0)
+        worldNode.addChild(ready)
+        
+        // Ready Action
+        let scaleIn = SKAction.scaleTo(1.0, duration: 0.5)
+        let fadeIn = SKAction.fadeAlphaTo(1.0, duration: 0.5)
+        let fadeInGroup = SKAction.group([scaleIn, fadeIn])
+        
+        let delay = SKAction.waitForDuration(0.5)
+        
+        let scaleOut = SKAction.scaleTo(0.0, duration: 0.5)
+        let fadeOut = SKAction.fadeAlphaTo(0.0, duration: 0.5)
+        let remove = SKAction.removeFromParent()
+        let fadeOutGroup = SKAction.group([scaleOut, fadeOut, remove])
+        
+        ready.runAction(SKAction.sequence([fadeInGroup, delay, fadeOutGroup]))
+        
+        // Tutorial
+        let tutorial = SKSpriteNode(texture: GameTexturesSharedInstance.textureAtlas.textureNamed("Tutorial"))
+        tutorial.position = CGPoint(x: viewSize.width / 2, y: viewSize.height / 2)
+        tutorial.zPosition = GameLayer.Interface
+        tutorial.name = "Tutorial"
+        worldNode.addChild(tutorial)
+        
+        // Tutorial Action
+        let blink = SKAction.sequence([SKAction.fadeOutWithDuration(0.25), SKAction.fadeInWithDuration(0.25)])
+        let blinkSequence = SKAction.repeatAction(blink, count: 3)
+        tutorial.runAction(blinkSequence, completion: {
+            tutorial.removeFromParent()
+            self.scene.userInteractionEnabled = true
+        })
     }
     
     func switchToPlay() {
@@ -140,20 +186,81 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func switchToGameOver() {
         state = GameState.GameOver
         
+        self.flashBackground()
         ground.stopGround()
         hills.stopHills()
+        
+        // Animate smoke on player
+        let smoke = Smoke()
+        worldNode.addChild(smoke)
+        smoke.animateSmoke(player.position)
+        
+        // Blink and hide player
+        let blink = SKAction.sequence([SKAction.fadeOutWithDuration(0.15), SKAction.fadeInWithDuration(0.15)])
+        let blinkSequence = SKAction.repeatAction(blink, count: 3)
+        player.runAction(blinkSequence, completion: {
+            self.player.hidden = true
+        })
+        
+        // Game Over
+        let gameOver = SKSpriteNode(texture: GameTexturesSharedInstance.textureAtlas.textureNamed("GameOver"))
+        gameOver.position = CGPoint(x: viewSize.width / 2, y: viewSize.height * 0.8)
+        gameOver.zPosition = GameLayer.Interface
+        worldNode.addChild(gameOver)
+        
+        // Update score if higher than best
+        
+        // Current Score
+        let scoreTitle = SKSpriteNode(texture: GameTexturesSharedInstance.textureAtlas.textureNamed("Score"))
+        scoreTitle.position = CGPoint(x: viewSize.width * 0.3, y: viewSize.height * 0.65)
+        scoreTitle.zPosition = GameLayer.Interface
+        worldNode.addChild(scoreTitle)
+        
+        let scoreLabel = BMGlyphLabel(text: NSString(format: "%d", score), font: scoreFont)
+        scoreLabel.position = CGPoint(x: viewSize.width * 0.3, y: viewSize.height * 0.5)
+        scoreLabel.zPosition = GameLayer.Interface
+        worldNode.addChild(scoreLabel)
+        
+        // Best Score
+        let bestScoreTitle = SKSpriteNode(texture: GameTexturesSharedInstance.textureAtlas.textureNamed("BestScore"))
+        bestScoreTitle.position = CGPoint(x: viewSize.width * 0.7, y: viewSize.height * 0.65)
+        bestScoreTitle.zPosition = GameLayer.Interface
+        worldNode.addChild(bestScoreTitle)
+        
+        let bestScoreLabel = BMGlyphLabel(text: NSString(format: "%d", GameSettingsSharedInstance.bestScore), font: scoreFont)
+        bestScoreLabel.position = CGPoint(x: viewSize.width * 0.7, y: viewSize.height * 0.5)
+        bestScoreLabel.zPosition = GameLayer.Interface
+        worldNode.addChild(bestScoreLabel)
+        
+        // Retry Button
+        retry = SKSpriteNode(texture: GameTexturesSharedInstance.textureAtlas.textureNamed("Retry"))
+        retry.position = CGPoint(x: viewSize.width * 0.25, y: viewSize.height * 0.3)
+        retry.zPosition = GameLayer.Interface
+        worldNode.addChild(retry)
+        
+        // Leaders Button
+        leaders = SKSpriteNode(texture: GameTexturesSharedInstance.textureAtlas.textureNamed("Leaders"))
+        leaders.position = CGPoint(x: viewSize.width * 0.75, y: viewSize.height * 0.3)
+        leaders.zPosition = GameLayer.Interface
+        worldNode.addChild(leaders)
     }
     
-//    func flashBackground() {
-//        let shake = SKAction.screenShakeWithNode(worldNode, amount: CGPoint(x: 20, y: 15), oscillations: 10, duration: 0.75)
-//        let colorBackground = SKAction.runBlock({
-//            self.backgroundColor = SKColor.redColor()
-//            self.runAction(SKAction.waitForDuration(0.5), completion: {
-//                self.backgroundColor = SKColor.whiteColor()
-//            })
-//        })
-//        let flashGroup = SKAction.group([shake, colorBackground])
-//        self.runAction(flashGroup)
-//    }
-
+    func switchToNewGame() {
+        let gameScene = GameScene(size: viewSize)
+        gameScene.scaleMode = SKSceneScaleMode.AspectFill
+        let gameTransition = SKTransition.fadeWithColor(SKColor.blackColor(), duration: 0.25)
+        self.view.presentScene(gameScene, transition: gameTransition)
+    }
+    
+    func flashBackground() {
+        let shake = SKAction.screenShakeWithNode(worldNode, amount: CGPoint(x: 20, y: 15), oscillations: 10, duration: 0.75)
+        let colorBackground = SKAction.runBlock({
+            self.backgroundColor = SKColor.redColor()
+            self.runAction(SKAction.waitForDuration(0.5), completion: {
+                self.backgroundColor = SKColorFromRBG(kBGColor)
+            })
+        })
+        let flashGroup = SKAction.group([shake, colorBackground])
+        self.runAction(flashGroup)
+    }
 }

@@ -17,9 +17,14 @@ class GameTextures {
     }
     
     internal var textureAtlas = SKTextureAtlas()
+    internal var smokering = [SKTexture]()
     
     init () {
         textureAtlas = SKTextureAtlas(named: "Artwork")
+        
+        for index in 0...35 {
+            smokering.append(self.textureAtlas.textureNamed(NSString(format: "Smokering%d", index)))
+        }
     }
     
 }

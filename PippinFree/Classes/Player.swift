@@ -59,7 +59,7 @@ class Player: SKSpriteNode {
     
     func fly() {
         self.physicsBody.velocity = CGVectorMake(0, 0)
-        self.physicsBody.applyImpulse(CGVectorMake(0, 10))
+        self.physicsBody.applyImpulse(CGVectorMake(0, 15))
         self.runAction(GameSoundsSharedInstance.flying)
     }
 }

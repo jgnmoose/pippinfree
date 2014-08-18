@@ -25,10 +25,11 @@ func RandomPositionY(height: CGFloat) -> CGFloat {
 class GameLayer {
     class var Sky:CGFloat       { return 0 }
     class var Hills:CGFloat     { return 1 }
-    class var Spike:CGFloat     { return 2 }
+    class var Logs:CGFloat     { return 2 }
     class var Ground:CGFloat    { return 3 }
     class var Game:CGFloat      { return 4 }
-    class var Interface:CGFloat { return 5 }
+    class var Effects:CGFloat   { return 5 }
+    class var Interface:CGFloat { return 6 }
 }
 
 // MARK: Contact
@@ -69,6 +70,7 @@ let kMusicGame = "gamemusic.mp3"
 // MARK: Object Names
 let kNameGround = "Ground"
 let kNameHills = "Hills"
+let kNameLogs = "Logs"
 let kNamePlayer = "Player"
 
 // MARK: Object Speeds
