@@ -104,14 +104,14 @@ func + (left: CGPoint, right: CGPoint) -> CGPoint {
 /**
  * Increments a CGPoint with the value of another.
  */
-func += (inout left: CGPoint, right: CGPoint) {
+ func += (inout left: CGPoint, right: CGPoint) {
   left = left + right
 }
 
 /**
  * Adds a CGVector to this CGPoint and returns the result as a new CGPoint.
  */
-func + (left: CGPoint, right: CGVector) -> CGPoint {
+ func + (left: CGPoint, right: CGVector) -> CGPoint {
   return CGPoint(x: left.x + right.dx, y: left.y + right.dy)
 }
 

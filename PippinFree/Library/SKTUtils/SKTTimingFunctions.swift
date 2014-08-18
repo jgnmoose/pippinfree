@@ -209,14 +209,14 @@ func SKTTimingFunctionExtremeBackEaseInOut(t: CGFloat) -> CGFloat {
 //}
 
 //func SKTTimingFunctionBounceEaseOut(t: CGFloat) -> CGFloat {
-//  if t < 1.0 / 2.75 {
+//  if (t <= 1.0 / 2.75) {
 //    return 7.5625 * t * t
-//  } else if t < 2.0 / 2.75 {
-//    let f = t - 1.5 / 2.75
+//  } else if (t <= 2.0 / 2.75) {
+//    let f = (t - 1.5 / 2.75)
 //    return 7.5625 * f * f + 0.75
-//  } else if t < 2.5 / 2.75 {
-//    let f = t - 2.25 / 2.75
-//    return 7.5625 * f * f + 0.9375
+//  } else if (t <= 2.5 / 2.75) {
+//    let f = (t - 2.25 / 2.75)
+//    return (7.5625 * f * f + 0.9375)
 //  } else {
 //    let f = t - 2.625 / 2.75
 //    return 7.5625 * f * f + 0.984375
