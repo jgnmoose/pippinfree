@@ -87,7 +87,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 self.runAction(GameSoundsSharedInstance.falling)
                 self.switchToGameOver()
                 
-            } else if other.categoryBitMask == Contact.Spike {
+            } else if other.categoryBitMask == Contact.Logs {
                 self.runAction(GameSoundsSharedInstance.whack)
                 self.runAction(GameSoundsSharedInstance.falling)
                 self.switchToGameOver()

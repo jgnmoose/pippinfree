@@ -38,6 +38,19 @@ class Logs: SKNode {
         logBottom.position = CGPoint(x: 0, y: randomY)
         logTop.position = CGPoint(x: logBottom.position.x, y: randomY + logBottom.size.height + logGap)
         
+        // Log Physics Bodies
+        logBottom.physicsBody = SKPhysicsBody(polygonFromPath: GameTexturesSharedInstance.logBottomPath)
+        logBottom.physicsBody.dynamic = false
+        logBottom.physicsBody.categoryBitMask = Contact.Logs
+        logBottom.physicsBody.collisionBitMask = Contact.Player
+        logBottom.physicsBody.contactTestBitMask = Contact.Player
+        
+        logTop.physicsBody = SKPhysicsBody(polygonFromPath: GameTexturesSharedInstance.logTopPath)
+        logTop.physicsBody.dynamic = false
+        logTop.physicsBody.categoryBitMask = Contact.Logs
+        logTop.physicsBody.collisionBitMask = Contact.Player
+        logTop.physicsBody.contactTestBitMask = Contact.Player
+        
         // Create and position Score Node
         let scoreNode = SKNode()
         scoreNode.position = CGPoint(x: logBottom.size.width, y: viewSize.height / 2)

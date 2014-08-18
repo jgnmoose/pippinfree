@@ -35,7 +35,7 @@ class GameLayer {
 // MARK: Contact
 class Contact {
     class var Scene:UInt32  { return 1 << 0 }
-    class var Spike:UInt32  { return 1 << 1 }
+    class var Logs:UInt32  { return 1 << 1 }
     class var Player:UInt32 { return 1 << 2 }
     class var Score:UInt32  { return 1 << 3 }
 }

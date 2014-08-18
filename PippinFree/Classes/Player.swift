@@ -35,7 +35,7 @@ class Player: SKSpriteNode {
         self.physicsBody = SKPhysicsBody(circleOfRadius: self.size.height / 2 )
         self.physicsBody.categoryBitMask = Contact.Player
         self.physicsBody.collisionBitMask = Contact.Scene
-        self.physicsBody.contactTestBitMask = Contact.Scene | Contact.Spike
+        self.physicsBody.contactTestBitMask = Contact.Scene | Contact.Logs
     }
     
     func animate() {
