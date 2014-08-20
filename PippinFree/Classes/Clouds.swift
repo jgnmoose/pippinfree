@@ -12,7 +12,7 @@ class Clouds: SKSpriteNode {
     
     private let viewSize = UIScreen.mainScreen().bounds.size
     
-    required init(coder aDecoder: NSCoder!) {
+    required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     

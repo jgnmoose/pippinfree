@@ -37,7 +37,7 @@ class GameSounds {
     }
     
     func playBackgroundMusic(filename: String) {
-        let gameMusic = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource(kMusicGame, ofType: nil))
+        let gameMusic = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource(kMusicGame, ofType: nil)!)
         var playerError:NSError?
         
         musicPlayer = AVAudioPlayer(contentsOfURL: gameMusic, error: &playerError)

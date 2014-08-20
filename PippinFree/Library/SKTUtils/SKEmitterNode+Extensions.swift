@@ -29,6 +29,6 @@ extension SKEmitterNode {
    */
   class func emitterNodeNamed(name: NSString) -> SKEmitterNode {
     let path = NSBundle.mainBundle().pathForResource(name, ofType: "sks")
-    return NSKeyedUnarchiver.unarchiveObjectWithFile(path) as SKEmitterNode
+    return NSKeyedUnarchiver.unarchiveObjectWithFile(path!) as SKEmitterNode
   }
 }

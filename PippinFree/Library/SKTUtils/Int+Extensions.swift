@@ -26,9 +26,9 @@ extension Int {
   /**
    * Handy conversion of Int to CGFloat
    */
-  func __conversion() -> CGFloat {
-    return CGFloat(self)
-  }
+//  func __conversion() -> CGFloat {
+//    return CGFloat(self)
+//  }
 
   /**
    * Ensures that the integer value stays with the specified range.

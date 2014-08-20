@@ -31,8 +31,8 @@ class GameSettings {
     }
     
     func firstLaunch() {
-        if !localDefaults.objectForKey(keyFirstRun) {
-            if !localDefaults.objectForKey(keyBestScore) {
+        if !(localDefaults.objectForKey(keyFirstRun) != nil) {
+            if !(localDefaults.objectForKey(keyBestScore) != nil) {
                 localDefaults.setInteger(0, forKey: keyBestScore)
                 localDefaults.setBool(true, forKey: keyMusicEnabled)
                 localDefaults.setBool(false, forKey: keyFirstRun)

@@ -27,7 +27,7 @@ extension Double {
   /**
    * Handy conversion of Double to CGFloat
    */
-  func __conversion() -> CGFloat {
-    return CGFloat(self)
-  }
+//  func __conversion() -> CGFloat {
+//    return CGFloat(self)
+//  }
 }
