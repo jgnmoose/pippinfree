@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             GameSoundsSharedInstance.pauseBackgroundMusic()
         }
         
-        let view = self.window?.rootViewController.view as SKView
+        let view = self.window?.rootViewController?.view as SKView
         view.paused = true
     }
 
@@ -39,7 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             GameSoundsSharedInstance.resumeBackgroundMusic()
         }
         
-        let view = self.window?.rootViewController.view as SKView
+        let view = self.window?.rootViewController?.view as SKView
         view.paused = false
     }
 

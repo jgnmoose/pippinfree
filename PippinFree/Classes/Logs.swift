@@ -40,25 +40,25 @@ class Logs: SKNode {
         
         // Log Physics Bodies
         logBottom.physicsBody = SKPhysicsBody(polygonFromPath: GameTexturesSharedInstance.logBottomPath)
-        logBottom.physicsBody.dynamic = false
-        logBottom.physicsBody.categoryBitMask = Contact.Logs
-        logBottom.physicsBody.collisionBitMask = Contact.Player
-        logBottom.physicsBody.contactTestBitMask = Contact.Player
+        logBottom.physicsBody?.dynamic = false
+        logBottom.physicsBody?.categoryBitMask = Contact.Logs
+        logBottom.physicsBody?.collisionBitMask = Contact.Player
+        logBottom.physicsBody?.contactTestBitMask = Contact.Player
         
         logTop.physicsBody = SKPhysicsBody(polygonFromPath: GameTexturesSharedInstance.logTopPath)
-        logTop.physicsBody.dynamic = false
-        logTop.physicsBody.categoryBitMask = Contact.Logs
-        logTop.physicsBody.collisionBitMask = Contact.Player
-        logTop.physicsBody.contactTestBitMask = Contact.Player
+        logTop.physicsBody?.dynamic = false
+        logTop.physicsBody?.categoryBitMask = Contact.Logs
+        logTop.physicsBody?.collisionBitMask = Contact.Player
+        logTop.physicsBody?.contactTestBitMask = Contact.Player
         
         // Create and position Score Node
         let scoreNode = SKNode()
         scoreNode.position = CGPoint(x: logBottom.size.width, y: viewSize.height / 2)
         scoreNode.physicsBody = SKPhysicsBody(rectangleOfSize: CGSizeMake(logBottom.size.width / 2, viewSize.height))
-        scoreNode.physicsBody.dynamic = false
-        scoreNode.physicsBody.categoryBitMask = Contact.Score
-        scoreNode.physicsBody.collisionBitMask = 0x0
-        scoreNode.physicsBody.contactTestBitMask = Contact.Player
+        scoreNode.physicsBody?.dynamic = false
+        scoreNode.physicsBody?.categoryBitMask = Contact.Score
+        scoreNode.physicsBody?.collisionBitMask = 0x0
+        scoreNode.physicsBody?.contactTestBitMask = Contact.Player
         
         // Add children
         self.addChild(logBottom)

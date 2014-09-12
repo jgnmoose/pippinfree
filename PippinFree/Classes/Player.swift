@@ -33,9 +33,9 @@ class Player: SKSpriteNode {
         self.name = kNamePlayer
         
         self.physicsBody = SKPhysicsBody(circleOfRadius: self.size.height / 2 )
-        self.physicsBody.categoryBitMask = Contact.Player
-        self.physicsBody.collisionBitMask = Contact.Scene
-        self.physicsBody.contactTestBitMask = Contact.Scene | Contact.Logs
+        self.physicsBody?.categoryBitMask = Contact.Player
+        self.physicsBody?.collisionBitMask = Contact.Scene
+        self.physicsBody?.contactTestBitMask = Contact.Scene | Contact.Logs
     }
     
     func animate() {
@@ -48,9 +48,9 @@ class Player: SKSpriteNode {
     }
     
     func update() {
-        if self.physicsBody.velocity.dy > 30.0 {
+        if self.physicsBody?.velocity.dy > 30.0 {
             self.zRotation = CGFloat(M_PI / 6.0)
-        } else if self.physicsBody.velocity.dy < -100.0 {
+        } else if self.physicsBody?.velocity.dy < -100.0 {
             self.zRotation = CGFloat(-1 * M_PI_4)
         } else {
             self.zRotation = 0.0
@@ -58,8 +58,8 @@ class Player: SKSpriteNode {
     }
     
     func fly() {
-        self.physicsBody.velocity = CGVectorMake(0, 0)
-        self.physicsBody.applyImpulse(CGVectorMake(0, 15))
+        self.physicsBody?.velocity = CGVectorMake(0, 0)
+        self.physicsBody?.applyImpulse(CGVectorMake(0, 15))
         self.runAction(GameSoundsSharedInstance.flying)
     }
 }

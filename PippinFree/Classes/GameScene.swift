@@ -34,7 +34,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     override func didMoveToView(view: SKView) {
         state = GameState.Tutorial
         
-        self.scene.userInteractionEnabled = false
+        self.scene?.userInteractionEnabled = false
         self.setupWorld()
         self.switchToTutorial()
     }
@@ -131,7 +131,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         // Bounding box of playable area
         self.physicsBody = SKPhysicsBody(edgeLoopFromRect: CGRectMake(0, ground.size.height, viewSize.width, (viewSize.height - ground.size.height)))
-        self.physicsBody.categoryBitMask = Contact.Scene
+        self.physicsBody?.categoryBitMask = Contact.Scene
         
         // Score
         score = 0
@@ -179,7 +179,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let blinkSequence = SKAction.repeatAction(blink, count: 3)
         tutorial.runAction(blinkSequence, completion: {
             tutorial.removeFromParent()
-            self.scene.userInteractionEnabled = true
+            self.scene?.userInteractionEnabled = true
         })
     }
     
@@ -258,7 +258,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let gameScene = GameScene(size: viewSize)
         gameScene.scaleMode = SKSceneScaleMode.AspectFill
         let gameTransition = SKTransition.fadeWithColor(SKColor.blackColor(), duration: 0.25)
-        self.view.presentScene(gameScene, transition: gameTransition)
+        self.view?.presentScene(gameScene, transition: gameTransition)
     }
     
     func flashBackground() {
