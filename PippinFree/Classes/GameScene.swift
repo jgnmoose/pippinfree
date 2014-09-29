@@ -66,6 +66,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 return
             
             case GameState.Play:
+                player.update()
                 return
             
             case GameState.GameOver:

@@ -24,7 +24,7 @@ class GameTextures {
     init () {
         textureAtlas = SKTextureAtlas(named: "Artwork")
         
-        for index in 0...35 {
+        for index in 0...32 {
             smokering.append(self.textureAtlas.textureNamed(NSString(format: "Smokering%d", index)))
         }
         
