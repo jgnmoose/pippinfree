@@ -22,6 +22,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     private var retry = SKSpriteNode()
     private var leaders = SKSpriteNode()
     private var scoreHud = BMGlyphLabel()
+    private let musicButton = MusicButton()
+    private let tutorial = Tutorial()
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -45,15 +47,32 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         switch state {
             case GameState.Tutorial:
-                self.switchToPlay()
+                
+                if touchLocation.y < viewSize.height * 0.75 {
+                    self.switchToPlay()
+                }
+            
+                if musicButton.containsPoint(touchLocation) {
+                    musicButton.toggleMusic()
+                }
             
             case GameState.Play:
                 player.fly()
+            
+                if musicButton.containsPoint(touchLocation) {
+                    musicButton.toggleMusic()
+                }
+
         
             case GameState.GameOver:
                 if retry.containsPoint(touchLocation) {
                     self.switchToNewGame()
                 }
+            
+                if musicButton.containsPoint(touchLocation) {
+                    musicButton.toggleMusic()
+                }
+
             
             default:
                 return
@@ -141,51 +160,22 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         scoreHud.zPosition = GameLayer.Interface
         scoreHud.hidden = true
         worldNode.addChild(scoreHud)
+        
+        // Music Button
+        self.addChild(musicButton)
     }
     
     // MARK: State Methods
     func switchToTutorial() {
         state = GameState.Tutorial
         
-        // Ready
-        let ready = SKSpriteNode(texture: GameTexturesSharedInstance.textureAtlas.textureNamed("Ready"))
-        ready.position = CGPoint(x: viewSize.width / 2, y: viewSize.height * 0.75)
-        ready.zPosition = GameLayer.Interface
-        ready.setScale(0.0)
-        worldNode.addChild(ready)
-        
-        // Ready Action
-        let scaleIn = SKAction.scaleTo(1.0, duration: 0.5)
-        let fadeIn = SKAction.fadeAlphaTo(1.0, duration: 0.5)
-        let fadeInGroup = SKAction.group([scaleIn, fadeIn])
-        
-        let delay = SKAction.waitForDuration(0.5)
-        
-        let scaleOut = SKAction.scaleTo(0.0, duration: 0.5)
-        let fadeOut = SKAction.fadeAlphaTo(0.0, duration: 0.5)
-        let remove = SKAction.removeFromParent()
-        let fadeOutGroup = SKAction.group([scaleOut, fadeOut, remove])
-        
-        ready.runAction(SKAction.sequence([fadeInGroup, delay, fadeOutGroup]))
-        
-        // Tutorial
-        let tutorial = SKSpriteNode(texture: GameTexturesSharedInstance.textureAtlas.textureNamed("Tutorial"))
-        tutorial.position = CGPoint(x: viewSize.width / 2, y: viewSize.height / 2)
-        tutorial.zPosition = GameLayer.Interface
-        tutorial.name = "Tutorial"
-        worldNode.addChild(tutorial)
-        
-        // Tutorial Action
-        let blink = SKAction.sequence([SKAction.fadeOutWithDuration(0.25), SKAction.fadeInWithDuration(0.25)])
-        let blinkSequence = SKAction.repeatAction(blink, count: 3)
-        tutorial.runAction(blinkSequence, completion: {
-            tutorial.removeFromParent()
-            self.scene?.userInteractionEnabled = true
-        })
+        self.addChild(tutorial)
+        tutorial.blinkTutorial()
     }
     
     func switchToPlay() {
         state = GameState.Play
+        tutorial.hideTutorial()
         
         // Set gravity
         self.physicsWorld.gravity = CGVectorMake(0, -5.0)

@@ -13,6 +13,7 @@ class MenuScene: SKScene {
     private let viewSize = UIScreen.mainScreen().bounds.size
     
     private var playButton = SKSpriteNode()
+    private let musicButton = MusicButton()
     private var bounceTimer:NSTimer!
     
     
@@ -25,7 +26,9 @@ class MenuScene: SKScene {
     }
     
     override func didMoveToView(view: SKView) {
-        GameSoundsSharedInstance.playBackgroundMusic(kMusicGame)
+        if GameSettingsSharedInstance.musicEnabled! {
+            GameSoundsSharedInstance.playBackgroundMusic(kMusicGame)
+        }
         
         self.setupMenu()
         
@@ -38,6 +41,10 @@ class MenuScene: SKScene {
         
         if playButton.containsPoint(touchLocation) {
             self.switchToPlay()
+        }
+        
+        if musicButton.containsPoint(touchLocation) {
+            musicButton.toggleMusic()
         }
     }
     
@@ -77,6 +84,9 @@ class MenuScene: SKScene {
         playButton.position = CGPoint(x: viewSize.width / 2, y: viewSize.height * 0.25)
         playButton.zPosition = GameLayer.Interface
         self.addChild(playButton)
+        
+        // Music Button
+        self.addChild(musicButton)
     }
     
     func animatePlay() {
@@ -96,4 +106,5 @@ class MenuScene: SKScene {
         let transition = SKTransition.fadeWithColor(SKColor.blackColor(), duration: 0.1)
         self.view?.presentScene(gameScene)
     }
+
 }

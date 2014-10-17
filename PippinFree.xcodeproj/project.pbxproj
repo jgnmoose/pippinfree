@@ -44,6 +44,8 @@
 		3FC784E7199D73C6006D333A /* whack.caf in Resources */ = {isa = PBXBuildFile; fileRef = 3FC784BF199D73C6006D333A /* whack.caf */; };
 		3FC784E9199D7433006D333A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC784E8199D7433006D333A /* Constants.swift */; };
 		3FC784EB199D7487006D333A /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC784EA199D7487006D333A /* MenuScene.swift */; };
+		3FD312FB19F1786600F0DDED /* MusicButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD312FA19F1786600F0DDED /* MusicButton.swift */; };
+		3FD312FD19F180E500F0DDED /* Tutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD312FC19F180E500F0DDED /* Tutorial.swift */; };
 		3FDF451C19A2628E0083F53E /* Smoke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDF451B19A2628E0083F53E /* Smoke.swift */; };
 		3FDF451F19A283C10083F53E /* GameOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDF451E19A283C10083F53E /* GameOver.swift */; };
 		3FDF453219A294350083F53E /* CGFloat+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDF452319A294350083F53E /* CGFloat+Extensions.swift */; };
@@ -119,6 +121,8 @@
 		3FC784EA199D7487006D333A /* MenuScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
 		3FC784EF199D8D81006D333A /* PippinFree-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PippinFree-Bridging-Header.h"; sourceTree = "<group>"; };
 		3FC784F0199D9AB7006D333A /* Artwork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Artwork.h; sourceTree = "<group>"; };
+		3FD312FA19F1786600F0DDED /* MusicButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicButton.swift; sourceTree = "<group>"; };
+		3FD312FC19F180E500F0DDED /* Tutorial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tutorial.swift; sourceTree = "<group>"; };
 		3FDF451B19A2628E0083F53E /* Smoke.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Smoke.swift; sourceTree = "<group>"; };
 		3FDF451E19A283C10083F53E /* GameOver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOver.swift; sourceTree = "<group>"; };
 		3FDF452319A294350083F53E /* CGFloat+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extensions.swift"; sourceTree = "<group>"; };
@@ -366,6 +370,8 @@
 			isa = PBXGroup;
 			children = (
 				3FDF451E19A283C10083F53E /* GameOver.swift */,
+				3FD312FA19F1786600F0DDED /* MusicButton.swift */,
+				3FD312FC19F180E500F0DDED /* Tutorial.swift */,
 			);
 			name = "Scene Nodes";
 			sourceTree = "<group>";
@@ -515,6 +521,7 @@
 				3FDF453419A294350083F53E /* CGVector+Extensions.swift in Sources */,
 				3FB6A5BB199FF4AF00463876 /* GameSettings.swift in Sources */,
 				3FC784C1199D73C6006D333A /* GameScene.swift in Sources */,
+				3FD312FB19F1786600F0DDED /* MusicButton.swift in Sources */,
 				3F094862199E8B9D0059D44A /* Ground.swift in Sources */,
 				3FC784C2199D73C6006D333A /* GameViewController.swift in Sources */,
 				3FDF453319A294350083F53E /* CGPoint+Extensions.swift in Sources */,
@@ -528,6 +535,7 @@
 				3FB6A5B9199FE97500463876 /* Clouds.swift in Sources */,
 				3FDF453519A294350083F53E /* Double+Extensions.swift in Sources */,
 				3FC784E9199D7433006D333A /* Constants.swift in Sources */,
+				3FD312FD19F180E500F0DDED /* Tutorial.swift in Sources */,
 				3FDF453B19A294350083F53E /* SKNode+DebugDraw.swift in Sources */,
 				3FDF453D19A294350083F53E /* SKTAudio.swift in Sources */,
 				3FDF453F19A294350083F53E /* SKTTimingFunctions.swift in Sources */,

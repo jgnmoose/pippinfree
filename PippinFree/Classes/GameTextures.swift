@@ -18,6 +18,8 @@ class GameTextures {
     
     internal var textureAtlas = SKTextureAtlas()
     internal var smokering = [SKTexture]()
+    internal var musicOff:SKTexture?
+    internal var musicOn:SKTexture?
     internal var logBottomPath:CGMutablePathRef!
     internal var logTopPath:CGMutablePathRef!
     
@@ -27,6 +29,9 @@ class GameTextures {
         for index in 0...32 {
             smokering.append(self.textureAtlas.textureNamed(NSString(format: "Smokering%d", index)))
         }
+        
+        self.musicOff = self.textureAtlas.textureNamed("MusicOff")
+        self.musicOn = self.textureAtlas.textureNamed("MusicOn")
         
         self.setupCGPathRefs()
     }

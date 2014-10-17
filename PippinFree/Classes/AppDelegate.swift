@@ -35,7 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidBecomeActive(application: UIApplication!) {
-        if GameSoundsSharedInstance.musicPlayer.playing {
+        if GameSettingsSharedInstance.musicEnabled! {
             GameSoundsSharedInstance.resumeBackgroundMusic()
         }
         

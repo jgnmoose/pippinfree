@@ -38,7 +38,7 @@ class Clouds: SKSpriteNode {
         // Create a random scroll speed based on scene width
         let scrollSpeed = NSTimeInterval(RandomFloatRange(viewSize.width / 6.0, viewSize.width / 10.0))
         
-        let move = SKAction.moveTo(CGPointMake(0 - viewSize.width / 2, self.position.y), duration: scrollSpeed)
+        let move = SKAction.moveTo(CGPointMake(0 - self.size.width, self.position.y), duration: scrollSpeed)
         let reset = SKAction.moveTo(CGPointMake(viewSize.width + self.size.width / 2, self.position.y), duration: 0)
         let sequence = SKAction.sequence([move, reset])
         
