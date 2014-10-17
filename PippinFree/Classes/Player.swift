@@ -42,6 +42,14 @@ class Player: SKSpriteNode {
         let animationFrames = [GameTexturesSharedInstance.textureAtlas.textureNamed("Pippin0"), GameTexturesSharedInstance.textureAtlas.textureNamed("Pippin1")]
         self.runAction(SKAction.repeatActionForever(SKAction.animateWithTextures(animationFrames, timePerFrame: 0.15)))
     }
+
+    func blink() {
+        let blink = SKAction.sequence([SKAction.fadeOutWithDuration(0.15), SKAction.fadeInWithDuration(0.15)])
+        let blinkSequence = SKAction.repeatAction(blink, count: 3)
+        self.runAction(blinkSequence, completion: {
+            self.hidden = true
+        })
+    }
     
     func stopAnimation() {
         self.removeAllActions()

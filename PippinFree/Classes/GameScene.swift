@@ -231,11 +231,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         smoke.animateSmoke(player.position)
         
         // Blink and hide player
-        let blink = SKAction.sequence([SKAction.fadeOutWithDuration(0.15), SKAction.fadeInWithDuration(0.15)])
-        let blinkSequence = SKAction.repeatAction(blink, count: 3)
-        player.runAction(blinkSequence, completion: {
-            self.player.hidden = true
-        })
+        player.blink()
         
         // Game Over
         let gameOver = GameOver(score: score)

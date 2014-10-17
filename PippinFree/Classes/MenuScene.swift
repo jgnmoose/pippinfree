@@ -94,7 +94,6 @@ class MenuScene: SKScene {
         let gameScene = GameScene(size: viewSize)
         gameScene.scaleMode = SKSceneScaleMode.AspectFill
         let transition = SKTransition.fadeWithColor(SKColor.blackColor(), duration: 0.1)
-        //self.view.presentScene(gameScene)
         self.view?.presentScene(gameScene)
     }
 }

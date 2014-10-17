@@ -48,7 +48,7 @@ enum GameState:Int {
 }
 
 // MARK: Debug Flags
-let kDebug = true
+let kDebug = false
 let kShowAds = false
 
 // MARK: Colors
