@@ -66,8 +66,15 @@ class Player: SKSpriteNode {
     }
     
     func fly() {
+        
+        var impulse = CGVectorMake(0, 15)
+        
+        if IS_IPAD {
+            impulse = CGVectorMake(0, impulse.dy * 6)
+        }
+        
         self.physicsBody?.velocity = CGVectorMake(0, 0)
-        self.physicsBody?.applyImpulse(CGVectorMake(0, 15))
+        self.physicsBody?.applyImpulse(impulse)
         self.runAction(GameSoundsSharedInstance.flying)
     }
 }

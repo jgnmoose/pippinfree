@@ -24,7 +24,11 @@ class Logs: SKNode {
     }
     
     func spawnLogs() {
-        let logGap:CGFloat = 100.0
+        var logGap:CGFloat = 100.0
+        
+        if IS_IPAD {
+            logGap = 175.0
+        }
         
         // Create and position Bottom and Top Logs
         let logBottom = SKSpriteNode(texture: GameTexturesSharedInstance.textureAtlas.textureNamed("LogBottom"))

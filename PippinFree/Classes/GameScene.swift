@@ -39,6 +39,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.scene?.userInteractionEnabled = false
         self.setupWorld()
         self.switchToTutorial()
+        
+        println(viewSize)
     }
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
@@ -178,7 +180,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         tutorial.hideTutorial()
         
         // Set gravity
-        self.physicsWorld.gravity = CGVectorMake(0, -5.0)
+        if IS_IPAD {
+            self.physicsWorld.gravity = CGVectorMake(0, -10)
+        } else {
+            self.physicsWorld.gravity = CGVectorMake(0, -5.0)
+        }
         
         // Scroll world and animate player
         ground.scrollGround()

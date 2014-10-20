@@ -29,17 +29,23 @@ class GameViewController: UIViewController {
 //            bannerView.loadRequest(request)
 //        }
         
+    }
+    
+    override func viewWillLayoutSubviews() {
+        var viewSize = UIScreen.mainScreen().bounds.size
+        
         let skView = self.view as SKView
-        skView.ignoresSiblingOrder = false
+        skView.ignoresSiblingOrder = true
         
         if kDebug {
             skView.showsFPS = true
             skView.showsNodeCount = true
             skView.showsDrawCount = true
             skView.showsPhysics = true
+            println(viewSize)
         }
         
-        let menuScene = MenuScene(size: skView.bounds.size)
+        let menuScene = MenuScene(size: viewSize)
         menuScene.scaleMode = SKSceneScaleMode.AspectFill
         skView.presentScene(menuScene)
     }

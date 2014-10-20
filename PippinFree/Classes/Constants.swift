@@ -21,6 +21,10 @@ func RandomPositionY(height: CGFloat) -> CGFloat {
     return CGFloat(Int(arc4random_uniform(UInt32(UInt(height / 3)))))
 }
 
+
+// MARK: Device Type
+let IS_IPAD = (UIDevice.currentDevice().userInterfaceIdiom == UIUserInterfaceIdiom.Pad)
+
 // MARK: Layers
 class GameLayer {
     class var Sky:CGFloat       { return 0 }
@@ -48,7 +52,7 @@ enum GameState:Int {
 }
 
 // MARK: Debug Flags
-let kDebug = false
+let kDebug = true
 let kShowAds = false
 
 // MARK: Colors
