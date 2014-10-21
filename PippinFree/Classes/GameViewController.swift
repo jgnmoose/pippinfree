@@ -89,6 +89,7 @@ class GameViewController: UIViewController, ADBannerViewDelegate {
     }
     
     func bannerViewWillLoadAd(banner: ADBannerView!) {
+        self.bannerView.hidden = false
     }
     
     func bannerViewDidLoadAd(banner: ADBannerView!) {
@@ -101,6 +102,8 @@ class GameViewController: UIViewController, ADBannerViewDelegate {
     
         GameSoundsSharedInstance.resumeBackgroundMusic()
     
+        NSNotificationCenter.defaultCenter().postNotificationName("StartBounceTimer", object: nil)
+    
         self.bannerView.hidden = false
     }
     
@@ -110,11 +113,13 @@ class GameViewController: UIViewController, ADBannerViewDelegate {
     
         GameSoundsSharedInstance.pauseBackgroundMusic()
     
+        NSNotificationCenter.defaultCenter().postNotificationName("StopBounceTimer", object: nil)
+    
         return true
     }
     
     func bannerView(banner: ADBannerView!, didFailToReceiveAdWithError error: NSError!) {
-    
+        self.bannerView.hidden = true
     }
 #endif
 

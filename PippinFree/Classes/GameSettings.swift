@@ -26,21 +26,22 @@ class GameSettings {
     
     
     init () {
-        musicEnabled = localDefaults.boolForKey(keyMusicEnabled)
-        bestScore = localDefaults.integerForKey(keyBestScore)
+        // Guard against defaults not being written yet during first launch
+        if localDefaults.objectForKey(keyFirstRun) == nil {
+            musicEnabled = true
+            bestScore = 0
+        } else {
+            musicEnabled = localDefaults.boolForKey(keyMusicEnabled)
+            bestScore = localDefaults.integerForKey(keyBestScore)
+        }
     }
     
     func firstLaunch() {
-        if !(localDefaults.objectForKey(keyFirstRun) != nil) {
-            if !(localDefaults.objectForKey(keyBestScore) != nil) {
-                localDefaults.setInteger(0, forKey: keyBestScore)
-                localDefaults.setBool(true, forKey: keyMusicEnabled)
-                localDefaults.setBool(false, forKey: keyFirstRun)
-                localDefaults.synchronize()
-            } else {
-                localDefaults.setBool(false, forKey: keyFirstRun)
-                localDefaults.synchronize()
-            }
+        if (localDefaults.objectForKey(keyFirstRun) == nil) {
+            localDefaults.setInteger(0, forKey: keyBestScore)
+            localDefaults.setBool(true, forKey: keyMusicEnabled)
+            localDefaults.setBool(false, forKey: keyFirstRun)
+            localDefaults.synchronize()
         }
     }
     

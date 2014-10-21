@@ -27,7 +27,7 @@ class Logs: SKNode {
         var logGap:CGFloat = 100.0
         
         if IS_IPAD {
-            logGap = 175.0
+            logGap = 155.0
         }
         
         // Create and position Bottom and Top Logs

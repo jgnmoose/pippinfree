@@ -52,26 +52,23 @@ class GameSounds {
     }
     
     func stopBackgroundMusic () {
-        if self.musicPlaying {
+        if self.musicPlaying == true {
             musicPlayer.stop()
+            self.musicPlaying = false
         }
-        
-        self.musicPlaying = false
     }
     
     func pauseBackgroundMusic () {
-        if self.musicPlaying {
+        if self.musicPlaying == true {
             musicPlayer.pause()
+            self.musicPlaying = false
         }
-        
-        self.musicPlaying = false
     }
     
     func resumeBackgroundMusic () {
-        if !self.musicPlaying {
+        if self.musicPlaying == false && GameSettingsSharedInstance.musicEnabled == true {
             musicPlayer.play()
+            self.musicPlaying = true
         }
-        
-        self.musicPlaying = true
     }
 }

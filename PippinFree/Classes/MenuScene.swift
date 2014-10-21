@@ -23,6 +23,9 @@ class MenuScene: SKScene {
     
     override init(size: CGSize) {
         super.init(size: size)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "stopBounceTimer", name: "StopBounceTimer", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "startBounceTimer", name: "StartBounceTimer", object: nil)
     }
     
     override func didMoveToView(view: SKView) {
@@ -31,8 +34,7 @@ class MenuScene: SKScene {
         }
         
         self.setupMenu()
-        
-        bounceTimer = NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector: Selector("animatePlay"), userInfo: nil, repeats: true)
+        self.startBounceTimer()
     }
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
@@ -105,6 +107,19 @@ class MenuScene: SKScene {
         gameScene.scaleMode = SKSceneScaleMode.AspectFill
         let transition = SKTransition.fadeWithColor(SKColor.blackColor(), duration: 0.1)
         self.view?.presentScene(gameScene)
+    }
+    
+    func stopBounceTimer() {
+        bounceTimer.invalidate()
+        bounceTimer = nil
+    }
+    
+    func startBounceTimer() {
+        bounceTimer = NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector: Selector("animatePlay"), userInfo: nil, repeats: true)
+    }
+    
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
     }
 
 }
