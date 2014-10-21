@@ -52,7 +52,7 @@ enum GameState:Int {
 }
 
 // MARK: Debug Flags
-let kDebug = true
+let kDebug = false
 
 // MARK: Colors
 let kBGColor = 0x5CA1E7

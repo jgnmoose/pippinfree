@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,13 +16,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication!, didFinishLaunchingWithOptions launchOptions: NSDictionary!) -> Bool {
         GameSettingsSharedInstance.firstLaunch()
+        
+        // No sound on iPad without this set in didFinishLaunchingWithOptions
+        AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback, error: nil)
 
         return true
     }
 
     func applicationWillResignActive(application: UIApplication!) {
         if GameSoundsSharedInstance.musicPlayer.playing {
-            GameSoundsSharedInstance.pauseBackgroundMusic()
+            if GameSoundsSharedInstance.musicPlayer != nil {
+                GameSoundsSharedInstance.pauseBackgroundMusic()
+            }
         }
         
         let view = self.window?.rootViewController?.view as SKView
@@ -36,7 +42,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(application: UIApplication!) {
         if GameSettingsSharedInstance.musicEnabled! {
-            GameSoundsSharedInstance.resumeBackgroundMusic()
+            if GameSoundsSharedInstance.musicPlayer != nil {
+                GameSoundsSharedInstance.resumeBackgroundMusic()
+            }
         }
         
         let view = self.window?.rootViewController?.view as SKView

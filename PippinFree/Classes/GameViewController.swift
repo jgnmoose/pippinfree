@@ -14,11 +14,32 @@ class GameViewController: UIViewController, ADBannerViewDelegate {
 
     #if FREE
     let bannerView = ADBannerView(adType: ADAdType.Banner)
+    var bannerLoaded = false
     #endif
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        
+        var viewSize = UIScreen.mainScreen().bounds.size
+        
+        let skView = self.view as SKView
+        if (skView.scene == nil) {
+            skView.ignoresSiblingOrder = true
+            
+            if kDebug {
+                skView.showsFPS = true
+                skView.showsNodeCount = true
+                skView.showsDrawCount = true
+                skView.showsPhysics = true
+            }
+            
+            let menuScene = MenuScene(size: viewSize)
+            menuScene.scaleMode = SKSceneScaleMode.AspectFill
+            skView.presentScene(menuScene)
+        }
+    }
+    
+    override func viewWillAppear(animated: Bool) {
         #if FREE
             bannerView.frame = CGRectMake(0, self.view.frame.size.height - bannerView.frame.size.height, self.view.frame.size.width, bannerView.frame.size.height)
             bannerView.autoresizingMask = UIViewAutoresizing.FlexibleTopMargin | UIViewAutoresizing.FlexibleWidth
@@ -29,24 +50,6 @@ class GameViewController: UIViewController, ADBannerViewDelegate {
             NSNotificationCenter.defaultCenter().addObserver(self, selector: "showAds", name: "AdBannerShow", object: nil)
             NSNotificationCenter.defaultCenter().addObserver(self, selector: "hideAds", name: "AdBannerHide", object: nil)
         #endif
-    }
-    
-    override func viewWillLayoutSubviews() {
-        var viewSize = UIScreen.mainScreen().bounds.size
-        
-        let skView = self.view as SKView
-        skView.ignoresSiblingOrder = true
-        
-        if kDebug {
-            skView.showsFPS = true
-            skView.showsNodeCount = true
-            skView.showsDrawCount = true
-            skView.showsPhysics = true
-        }
-        
-        let menuScene = MenuScene(size: viewSize)
-        menuScene.scaleMode = SKSceneScaleMode.AspectFill
-        skView.presentScene(menuScene)
     }
 
     // Hide the status bar
@@ -101,14 +104,25 @@ class GameViewController: UIViewController, ADBannerViewDelegate {
     }
     
     func bannerViewActionDidFinish(banner: ADBannerView!) {
-        //optional resume paused game code
+        let skView = self.view as SKView
+        skView.scene?.paused = false
+    
+        GameSoundsSharedInstance.resumeBackgroundMusic()
+    
+        self.bannerView.hidden = false
     }
     
     func bannerViewActionShouldBegin(banner: ADBannerView!, willLeaveApplication willLeave: Bool) -> Bool {
+        let skView = self.view as SKView
+        skView.scene?.paused = true
+    
+        GameSoundsSharedInstance.pauseBackgroundMusic()
+    
         return true
     }
     
     func bannerView(banner: ADBannerView!, didFailToReceiveAdWithError error: NSError!) {
+    
     }
 #endif
 

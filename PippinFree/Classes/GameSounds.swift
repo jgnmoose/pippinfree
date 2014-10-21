@@ -19,7 +19,7 @@ class GameSounds {
     
     // Background Music Player
     internal var musicPlayer:AVAudioPlayer!
-    internal var musicPlaying:Bool?
+    internal var musicPlaying = false
     
     // Sound Effect SKActions
     internal var soundEffects = [SKAction]()
@@ -52,7 +52,7 @@ class GameSounds {
     }
     
     func stopBackgroundMusic () {
-        if musicPlayer.playing {
+        if self.musicPlaying {
             musicPlayer.stop()
         }
         
@@ -60,7 +60,7 @@ class GameSounds {
     }
     
     func pauseBackgroundMusic () {
-        if musicPlayer.playing {
+        if self.musicPlaying {
             musicPlayer.pause()
         }
         
@@ -68,7 +68,7 @@ class GameSounds {
     }
     
     func resumeBackgroundMusic () {
-        if !musicPlayer.playing {
+        if !self.musicPlaying {
             musicPlayer.play()
         }
         
