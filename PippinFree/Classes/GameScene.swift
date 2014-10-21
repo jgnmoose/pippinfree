@@ -34,13 +34,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     override func didMoveToView(view: SKView) {
+        #if FREE
+            NSNotificationCenter.defaultCenter().postNotificationName("AdBannerHide", object: nil)
+        #endif
+
+        
         state = GameState.Tutorial
         
         self.scene?.userInteractionEnabled = false
         self.setupWorld()
         self.switchToTutorial()
-        
-        println(viewSize)
     }
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
@@ -206,6 +209,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func switchToGameOver() {
         state = GameState.GameOver
+        
+        #if FREE
+            NSNotificationCenter.defaultCenter().postNotificationName("AdBannerShow", object: nil)
+        #endif
         
         // Stop scrolling and flash/shake background
         self.flashBackground()

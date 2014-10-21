@@ -8,27 +8,27 @@
 
 import UIKit
 import SpriteKit
+import iAd
 
-class GameViewController: UIViewController {
-    
-    //internal var bannerView = GADBannerView()
+class GameViewController: UIViewController, ADBannerViewDelegate {
+
+    #if FREE
+    let bannerView = ADBannerView(adType: ADAdType.Banner)
+    #endif
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        if kShowAds {
-//            let origin = CGPoint(x: 0.0, y: self.view.frame.size.height - CGSizeFromGADAdSize(kGADAdSizeSmartBannerPortrait).height)
-//            bannerView = GADBannerView(adSize: kGADAdSizeSmartBannerPortrait, origin: origin)
-//            bannerView.adUnitID = "ca-app-pub-8485086565892981/1647457356"
-//            bannerView.delegate = self
-//            bannerView.rootViewController = self
-//            self.view.addSubview(bannerView)
-//            
-//            let request = GADRequest()
-//            request.testDevices = ["75484efdafe56d15973415854b1000e5", "820330c15264279191df0cb37ba81e4e", "6f21763c916d7f9d8075dfe758ad5e99", "9679a898cc76ba5c017760c525f231c5"]
-//            bannerView.loadRequest(request)
-//        }
-        
+
+        #if FREE
+            bannerView.frame = CGRectMake(0, self.view.frame.size.height - bannerView.frame.size.height, self.view.frame.size.width, bannerView.frame.size.height)
+            bannerView.autoresizingMask = UIViewAutoresizing.FlexibleTopMargin | UIViewAutoresizing.FlexibleWidth
+            bannerView.hidden = true
+            bannerView.delegate = self
+            self.view.addSubview(bannerView)
+            
+            NSNotificationCenter.defaultCenter().addObserver(self, selector: "showAds", name: "AdBannerShow", object: nil)
+            NSNotificationCenter.defaultCenter().addObserver(self, selector: "hideAds", name: "AdBannerHide", object: nil)
+        #endif
     }
     
     override func viewWillLayoutSubviews() {
@@ -42,7 +42,6 @@ class GameViewController: UIViewController {
             skView.showsNodeCount = true
             skView.showsDrawCount = true
             skView.showsPhysics = true
-            println(viewSize)
         }
         
         let menuScene = MenuScene(size: viewSize)
@@ -72,4 +71,45 @@ class GameViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
+#if FREE
+    func showAds() {
+        self.bannerView.hidden = false
+    
+        if kDebug {
+            println("Showing Ads")
+        }
+    }
+    
+    func hideAds() {
+        self.bannerView.hidden = true
+    
+        if kDebug {
+            println("Hiding Ads")
+        }
+    }
+    
+    func bannerViewWillLoadAd(banner: ADBannerView!) {
+    }
+    
+    func bannerViewDidLoadAd(banner: ADBannerView!) {
+        self.bannerView.hidden = false
+    }
+    
+    func bannerViewActionDidFinish(banner: ADBannerView!) {
+        //optional resume paused game code
+    }
+    
+    func bannerViewActionShouldBegin(banner: ADBannerView!, willLeaveApplication willLeave: Bool) -> Bool {
+        return true
+    }
+    
+    func bannerView(banner: ADBannerView!, didFailToReceiveAdWithError error: NSError!) {
+    }
+#endif
+
 }

@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Pippin.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>PippinFree.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -12,6 +17,11 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>3F6D428819F6BF330081D20B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>3FC78458199D72C1006D333A</key>
 		<dict>
 			<key>primary</key>
