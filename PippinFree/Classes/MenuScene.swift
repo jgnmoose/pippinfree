@@ -17,7 +17,7 @@ class MenuScene: SKScene {
     private var bounceTimer:NSTimer!
     
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     

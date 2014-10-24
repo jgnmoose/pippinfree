@@ -13,7 +13,7 @@ class GameOver: SKNode {
     private let viewSize = UIScreen.mainScreen().bounds.size
     private let scoreFont = BMGlyphFont(name: "ScoreFont")
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     

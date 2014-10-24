@@ -7,8 +7,9 @@
 //
 
 import SpriteKit
+import GameKit
 
-class GameScene: SKScene, SKPhysicsContactDelegate {
+class GameScene: SKScene, SKPhysicsContactDelegate, GKGameCenterControllerDelegate {
     
     private let viewSize = UIScreen.mainScreen().bounds.size
     
@@ -25,7 +26,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     private let musicButton = MusicButton()
     private let tutorial = Tutorial()
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
@@ -72,6 +73,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             case GameState.GameOver:
                 if retry.containsPoint(touchLocation) {
                     self.switchToNewGame()
+                }
+                
+                if leaders.containsPoint(touchLocation) {
+                    self.showLeaderBoard()
                 }
             
                 if musicButton.containsPoint(touchLocation) {
@@ -282,5 +287,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if score % 5 == 0 {
             worldNode.runAction(GameSoundsSharedInstance.oink)
         }
+    }
+    
+    func showLeaderBoard() {
+        let gameCenterController = GKGameCenterViewController()
+        gameCenterController.gameCenterDelegate = self
+        gameCenterController.viewState = GKGameCenterViewControllerState.Leaderboards
+        let viewController = self.view?.window?.rootViewController
+        viewController?.presentViewController(gameCenterController, animated: true, completion: nil)
+    }
+    
+    func gameCenterViewControllerDidFinish(gameCenterViewController: GKGameCenterViewController!) {
+        gameCenterViewController.dismissViewControllerAnimated(true, completion: nil)
     }
 }

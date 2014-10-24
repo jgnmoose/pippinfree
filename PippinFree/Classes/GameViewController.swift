@@ -37,6 +37,9 @@ class GameViewController: UIViewController, ADBannerViewDelegate {
             menuScene.scaleMode = SKSceneScaleMode.AspectFill
             skView.presentScene(menuScene)
         }
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "showAuthenticationViewController", name: "GameCenterViewController", object: nil)
+        GameKitHelperSharedInstance.authenticatePlayer()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -65,9 +68,9 @@ class GameViewController: UIViewController, ADBannerViewDelegate {
     // Supported orientations
     override func supportedInterfaceOrientations() -> Int {
         if UIDevice.currentDevice().userInterfaceIdiom == UIUserInterfaceIdiom.Pad {
-            return Int(UIInterfaceOrientationMask.Portrait.toRaw() | UIInterfaceOrientationMask.PortraitUpsideDown.toRaw())
+            return Int(UIInterfaceOrientationMask.Portrait.rawValue | UIInterfaceOrientationMask.PortraitUpsideDown.rawValue)
         } else {
-            return Int(UIInterfaceOrientationMask.Portrait.toRaw())
+            return Int(UIInterfaceOrientationMask.Portrait.rawValue)
         }
     }
 
@@ -89,7 +92,7 @@ class GameViewController: UIViewController, ADBannerViewDelegate {
     }
     
     func bannerViewWillLoadAd(banner: ADBannerView!) {
-        self.bannerView.hidden = false
+        self.bannerView.hidden = true
     }
     
     func bannerViewDidLoadAd(banner: ADBannerView!) {

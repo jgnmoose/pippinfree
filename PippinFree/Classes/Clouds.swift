@@ -12,7 +12,7 @@ class Clouds: SKSpriteNode {
     
     private let viewSize = UIScreen.mainScreen().bounds.size
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
@@ -35,15 +35,14 @@ class Clouds: SKSpriteNode {
     }
     
     func scrollClouds() {
-        // Create a random scroll speed based on scene width
-        let scrollSpeed = NSTimeInterval(RandomFloatRange(viewSize.width / 6.0, viewSize.width / 10.0))
-        
+        let scrollSpeed = kSpeedHills * 1.25 as NSTimeInterval
         let move = SKAction.moveTo(CGPointMake(0 - self.size.width, self.position.y), duration: scrollSpeed)
         let reset = SKAction.moveTo(CGPointMake(viewSize.width + self.size.width / 2, self.position.y), duration: 0)
         let sequence = SKAction.sequence([move, reset])
         
         self.runAction(SKAction.repeatActionForever(sequence))
     }
+    
     
     func stopClouds() {
         self.removeAllActions()

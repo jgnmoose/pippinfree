@@ -13,7 +13,7 @@ class MusicButton: SKNode {
     private let viewSize = UIScreen.mainScreen().bounds.size
     private var button = SKSpriteNode()
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     

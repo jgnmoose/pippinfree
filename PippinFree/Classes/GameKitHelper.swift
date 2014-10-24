@@ -16,6 +16,7 @@ class GameKitHelper:NSObject {
     }
     
     private var enableGameCenter:Bool!
+    var authenticationViewController = UIViewController()
     
     override init() {
         super.init()
@@ -36,26 +37,19 @@ class GameKitHelper:NSObject {
             } else {
                 self.enableGameCenter = false
             }
-        
         }
     }
     
     func setAuthenticationViewController(authenticationViewController: UIViewController) {
-//        if (authenticationViewController != nil) {
-//            self.authenticationViewController = authenticationViewController;
-//            [[NSNotificationCenter defaultCenter] postNotificationName:@"GameCenterViewController" object:self];
-//        }
+        self.authenticationViewController = authenticationViewController
+        NSNotificationCenter.defaultCenter().postNotificationName("GameCenterViewController", object: self)
     }
     
     func setLastError(error: NSError) {
         var lastError:NSError = error.copy() as NSError
         
-        if lastError.description != nil {
+        if !lastError.description.isEmpty {
             println(lastError.description)
         }
-//        _lastError = [error copy];
-//        if (self.lastError) {
-//            NSLog(@"GameKitHelper ERROR: %@", [[self.lastError userInfo] description]);
-//        }
     }
 }

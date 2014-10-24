@@ -13,7 +13,7 @@ class Tutorial: SKNode {
     private let viewSize = UIScreen.mainScreen().bounds.size
     private var onboard = SKSpriteNode()
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
