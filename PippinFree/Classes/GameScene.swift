@@ -290,11 +290,19 @@ class GameScene: SKScene, SKPhysicsContactDelegate, GKGameCenterControllerDelega
     }
     
     func showLeaderBoard() {
-        let gameCenterController = GKGameCenterViewController()
-        gameCenterController.gameCenterDelegate = self
-        gameCenterController.viewState = GKGameCenterViewControllerState.Leaderboards
-        let viewController = self.view?.window?.rootViewController
-        viewController?.presentViewController(gameCenterController, animated: true, completion: nil)
+        if !NetworkCheck.checkConnection() {
+            let alert = UIAlertView()
+            alert.title = "No Network Access"
+            alert.message = "Game Center is not available."
+            alert.addButtonWithTitle("Ok")
+            alert.show()
+        } else {
+            let gameCenterController = GKGameCenterViewController()
+            gameCenterController.gameCenterDelegate = self
+            gameCenterController.viewState = GKGameCenterViewControllerState.Leaderboards
+            let viewController = self.view?.window?.rootViewController
+            viewController?.presentViewController(gameCenterController, animated: true, completion: nil)
+        }
     }
     
     func gameCenterViewControllerDidFinish(gameCenterViewController: GKGameCenterViewController!) {

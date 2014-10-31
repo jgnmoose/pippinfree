@@ -38,20 +38,26 @@ class GameViewController: UIViewController, ADBannerViewDelegate {
             skView.presentScene(menuScene)
         }
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "showAuthenticationViewController", name: "GameCenterViewController", object: nil)
-        GameKitHelperSharedInstance.authenticatePlayer()
+        if NetworkCheck.checkConnection() {
+            NSNotificationCenter.defaultCenter().addObserver(self, selector: "showAuthenticationViewController", name: "GameCenterViewController", object: nil)
+            GameKitHelperSharedInstance.authenticatePlayer()
+        }
+        
     }
     
     override func viewWillAppear(animated: Bool) {
-        #if FREE
-            bannerView.frame = CGRectMake(0, self.view.frame.size.height - bannerView.frame.size.height, self.view.frame.size.width, bannerView.frame.size.height)
-            bannerView.autoresizingMask = UIViewAutoresizing.FlexibleTopMargin | UIViewAutoresizing.FlexibleWidth
-            bannerView.hidden = true
-            bannerView.delegate = self
-            self.view.addSubview(bannerView)
+       #if FREE
+        if NetworkCheck.checkConnection() {
             
-            NSNotificationCenter.defaultCenter().addObserver(self, selector: "showAds", name: "AdBannerShow", object: nil)
-            NSNotificationCenter.defaultCenter().addObserver(self, selector: "hideAds", name: "AdBannerHide", object: nil)
+                bannerView.frame = CGRectMake(0, self.view.frame.size.height - bannerView.frame.size.height, self.view.frame.size.width, bannerView.frame.size.height)
+                bannerView.autoresizingMask = UIViewAutoresizing.FlexibleTopMargin | UIViewAutoresizing.FlexibleWidth
+                bannerView.hidden = true
+                bannerView.delegate = self
+                self.view.addSubview(bannerView)
+                
+                NSNotificationCenter.defaultCenter().addObserver(self, selector: "showAds", name: "AdBannerShow", object: nil)
+                NSNotificationCenter.defaultCenter().addObserver(self, selector: "hideAds", name: "AdBannerHide", object: nil)
+        }
         #endif
     }
 
@@ -125,5 +131,10 @@ class GameViewController: UIViewController, ADBannerViewDelegate {
         self.bannerView.hidden = true
     }
 #endif
+    
+    func showAuthenticationViewController() {
+        let gameKitHelper = GameKitHelperSharedInstance
+        self.presentViewController(gameKitHelper.authenticationViewController, animated: true, completion: nil)
+    }
 
 }

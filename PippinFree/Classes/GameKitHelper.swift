@@ -21,21 +21,18 @@ class GameKitHelper:NSObject {
     override init() {
         super.init()
         
-        enableGameCenter = true
+        enableGameCenter = false
     }
     
     func authenticatePlayer() {
         let localPlayer = GKLocalPlayer.localPlayer()
         
-        localPlayer.authenticateHandler = {(viewController : UIViewController!, error : NSError!) -> Void in
-            self.setLastError(error)
-            
+        localPlayer.authenticateHandler = {(viewController: UIViewController!, error: NSError!) -> Void in
+
             if viewController != nil {
                 self.setAuthenticationViewController(viewController)
             } else if localPlayer.authenticated {
                 self.enableGameCenter = true
-            } else {
-                self.enableGameCenter = false
             }
         }
     }
@@ -43,13 +40,5 @@ class GameKitHelper:NSObject {
     func setAuthenticationViewController(authenticationViewController: UIViewController) {
         self.authenticationViewController = authenticationViewController
         NSNotificationCenter.defaultCenter().postNotificationName("GameCenterViewController", object: self)
-    }
-    
-    func setLastError(error: NSError) {
-        var lastError:NSError = error.copy() as NSError
-        
-        if !lastError.description.isEmpty {
-            println(lastError.description)
-        }
     }
 }

@@ -27,7 +27,7 @@ class MusicButton: SKNode {
         let texture = GameSettingsSharedInstance.musicEnabled! ? GameTexturesSharedInstance.musicOn : GameTexturesSharedInstance.musicOff
         self.button = SKSpriteNode(texture: texture)
         
-        self.button.position = CGPoint(x: viewSize.width * 0.9, y: viewSize.height * 0.9)
+        self.button.position = CGPoint(x: viewSize.width * 0.9, y: viewSize.height * 0.95)
         self.button.zPosition = GameLayer.Interface
         
         self.addChild(self.button)
