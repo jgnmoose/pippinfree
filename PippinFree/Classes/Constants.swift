@@ -54,6 +54,16 @@ enum GameState:Int {
 // MARK: Debug Flags
 let kDebug = false
 
+#if FREE
+    let kAppName = "Fly Pippin - Free"
+    let kAppID = "861765885"
+#else
+    let kAppName = "Fly Pippin"
+    let kAppID = "835631825"
+#endif
+
+let kAppStoreURL = "itms-apps://itunes.apple.com/app/id\(kAppID)"
+
 // MARK: Colors
 let kBGColor = 0x5CA1E7
 
@@ -66,6 +76,7 @@ let kSoundHitGround = "hitGround.caf"
 let kSoundOink = "oink.caf"
 let kSoundPop = "pop.caf"
 let kSoundWhack = "whack.caf"
+let kSoundCrashed = "crashed.mp3"
 
 // MARK: Music
 let kMusicGame = "gamemusic.mp3"

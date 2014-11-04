@@ -80,9 +80,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate, GKGameCenterControllerDelega
                     self.showLeaderBoard()
                 }
                 
-                if rate.containsPoint(touchLocation) {
-                    self.ratePippin()
-                }
             
                 if musicButton.containsPoint(touchLocation) {
                     musicButton.toggleMusic()
@@ -261,12 +258,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate, GKGameCenterControllerDelega
         leaders.position = CGPoint(x: viewSize.width * 0.75, y: viewSize.height * 0.3)
         leaders.zPosition = GameLayer.Interface
         worldNode.addChild(leaders)
-        
-        // Rate Button
-        rate = SKSpriteNode(texture: GameTexturesSharedInstance.textureAtlas.textureNamed("Leaders"))
-        rate.position = CGPoint(x: viewSize.width * 0.5, y: viewSize.height * 0.2)
-        rate.zPosition = GameLayer.Interface
-        worldNode.addChild(rate)
     }
     
     func switchToNewGame() {
@@ -317,19 +308,5 @@ class GameScene: SKScene, SKPhysicsContactDelegate, GKGameCenterControllerDelega
     
     func gameCenterViewControllerDidFinish(gameCenterViewController: GKGameCenterViewController!) {
         gameCenterViewController.dismissViewControllerAnimated(true, completion: nil)
-    }
-    
-    //MARK: Rate
-    func ratePippin() {
-        #if FREE
-            if let appURL = NSURL(string: "http://itunes.com/apps/fly-pippin-free/id861765885?mt=8") {
-                UIApplication.sharedApplication().openURL(appURL)
-            }
-        #else
-            if let appURL = NSURL(string: "http://itunes.com/app/fly-pippin/id835631825?mt=8") {
-                UIApplication.sharedApplication().openURL(appURL)
-            }
-            
-        #endif
     }
 }

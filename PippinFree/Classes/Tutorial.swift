@@ -43,10 +43,8 @@ class Tutorial: SKNode {
         let remove = SKAction.removeFromParent()
         let fadeOutGroup = SKAction.group([scaleOut, fadeOut, remove])
         
-        //ready.runAction(SKAction.sequence([fadeInGroup, delay, fadeOutGroup]))
         ready.runAction(fadeInGroup)
         
-        // "Onboard", graphic telling player what to do
         onboard = SKSpriteNode(texture: GameTexturesSharedInstance.textureAtlas.textureNamed("Tutorial"))
         onboard.position = CGPoint(x: viewSize.width / 2, y: viewSize.height / 2)
         onboard.zPosition = GameLayer.Interface

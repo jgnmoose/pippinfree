@@ -31,6 +31,7 @@ class GameSounds {
     internal var oink = SKAction.playSoundFileNamed(kSoundOink, waitForCompletion: false)
     internal var pop = SKAction.playSoundFileNamed(kSoundPop, waitForCompletion: false)
     internal var whack = SKAction.playSoundFileNamed(kSoundWhack, waitForCompletion: false)
+    internal var crashed = SKAction.playSoundFileNamed(kSoundCrashed, waitForCompletion: false)
     
     
     init () {
@@ -38,10 +39,10 @@ class GameSounds {
     }
     
     func playBackgroundMusic(filename: String) {
-        let gameMusic = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource(kMusicGame, ofType: nil)!)
+        let music = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource(filename, ofType: nil)!)
         var playerError:NSError?
         
-        musicPlayer = AVAudioPlayer(contentsOfURL: gameMusic, error: &playerError)
+        musicPlayer = AVAudioPlayer(contentsOfURL: music, error: &playerError)
         //musicPlayer.delegate = self
         musicPlayer.numberOfLoops = -1
         musicPlayer.volume = 0.75

@@ -21,8 +21,19 @@ class GameSettings {
     internal var musicEnabled:Bool!
     
     private var keyFirstRun = "FirstRun"
-    private var keyBestScore = "BestSCcore"
+    private var keyBestScore = "BestScore"
     private var keyMusicEnabled = "MusicEnabled"
+    internal let keyNeverRate = "NeverRate"
+    private let keyNumLaunches = "NumLaunches"
+    
+    private let promptSessions = 4
+    private var launchedSessions = 0
+    
+    #if FREE
+    private let appName = "Fly Pippin - Free"
+    #else
+    private let appName = "Fly Pippin"
+    #endif
     
     
     init () {
@@ -41,6 +52,7 @@ class GameSettings {
             localDefaults.setInteger(0, forKey: keyBestScore)
             localDefaults.setBool(true, forKey: keyMusicEnabled)
             localDefaults.setBool(false, forKey: keyFirstRun)
+            localDefaults.setBool(false, forKey: keyNeverRate)
             localDefaults.synchronize()
         }
     }
@@ -57,5 +69,20 @@ class GameSettings {
         
         localDefaults.setBool(musicEnabled, forKey: keyMusicEnabled)
         localDefaults.synchronize()
+    }
+    
+    func shouldRateApp() -> Bool {
+        if localDefaults.boolForKey(keyNeverRate) == false || localDefaults.objectForKey(keyNeverRate) == nil {
+            launchedSessions = localDefaults.integerForKey(keyNumLaunches)
+            launchedSessions++
+            localDefaults.setInteger(launchedSessions, forKey: keyNumLaunches)
+            localDefaults.setBool(false, forKey: keyNeverRate)
+            localDefaults.synchronize()
+            
+            return launchedSessions % promptSessions == 0 ? true : false
+            
+        } else {
+            return false
+        }
     }
 }

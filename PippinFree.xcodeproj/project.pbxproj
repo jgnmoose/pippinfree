@@ -12,8 +12,6 @@
 		3F09485D199E5CF00059D44A /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F09485C199E5CF00059D44A /* Player.swift */; };
 		3F09485F199E5CFF0059D44A /* Logs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F09485E199E5CFF0059D44A /* Logs.swift */; };
 		3F094862199E8B9D0059D44A /* Ground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F094861199E8B9D0059D44A /* Ground.swift */; };
-		3F0988811A091CF8008B0468 /* AppRating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0988801A091CF8008B0468 /* AppRating.swift */; };
-		3F0988821A091CF8008B0468 /* AppRating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0988801A091CF8008B0468 /* AppRating.swift */; };
 		3F3C71DE19FAD0AB00A359B9 /* GameKitHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3C71DD19FAD0AB00A359B9 /* GameKitHelper.swift */; };
 		3F3C71DF19FAD0AB00A359B9 /* GameKitHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3C71DD19FAD0AB00A359B9 /* GameKitHelper.swift */; };
 		3F6D428A19F6BF330081D20B /* SKColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDF452A19A294350083F53E /* SKColor+Extensions.swift */; };
@@ -64,7 +62,6 @@
 		3F6D42BD19F6BF330081D20B /* ScoreFont~ipad.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3FC784B4199D73C6006D333A /* ScoreFont~ipad.xml */; };
 		3F6D42BE19F6BF330081D20B /* ScoreFont.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 3FC784B0199D73C6006D333A /* ScoreFont.atlas */; };
 		3F6D42BF19F6BF330081D20B /* flying.caf in Resources */ = {isa = PBXBuildFile; fileRef = 3FC784BB199D73C6006D333A /* flying.caf */; };
-		3F6D42C019F6BF330081D20B /* gamemusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3FC784B6199D73C6006D333A /* gamemusic.mp3 */; };
 		3F6D42C119F6BF330081D20B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FC78466199D72C1006D333A /* Main.storyboard */; };
 		3F6D42C219F6BF330081D20B /* pop.caf in Resources */ = {isa = PBXBuildFile; fileRef = 3FC784BE199D73C6006D333A /* pop.caf */; };
 		3F6D42C319F6BF330081D20B /* Artwork.1@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FC784AB199D73C6006D333A /* Artwork.1@2x~ipad.png */; };
@@ -91,7 +88,6 @@
 		3FC784DC199D73C6006D333A /* ScoreFont@2x.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3FC784B2199D73C6006D333A /* ScoreFont@2x.xml */; };
 		3FC784DD199D73C6006D333A /* ScoreFont@2x~ipad.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3FC784B3199D73C6006D333A /* ScoreFont@2x~ipad.xml */; };
 		3FC784DE199D73C6006D333A /* ScoreFont~ipad.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3FC784B4199D73C6006D333A /* ScoreFont~ipad.xml */; };
-		3FC784DF199D73C6006D333A /* gamemusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3FC784B6199D73C6006D333A /* gamemusic.mp3 */; };
 		3FC784E0199D73C6006D333A /* bounce.caf in Resources */ = {isa = PBXBuildFile; fileRef = 3FC784B8199D73C6006D333A /* bounce.caf */; };
 		3FC784E1199D73C6006D333A /* coin.caf in Resources */ = {isa = PBXBuildFile; fileRef = 3FC784B9199D73C6006D333A /* coin.caf */; };
 		3FC784E2199D73C6006D333A /* falling.caf in Resources */ = {isa = PBXBuildFile; fileRef = 3FC784BA199D73C6006D333A /* falling.caf */; };
@@ -121,6 +117,8 @@
 		3FDF453E19A294350083F53E /* SKTEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDF452F19A294350083F53E /* SKTEffects.swift */; };
 		3FDF453F19A294350083F53E /* SKTTimingFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDF453019A294350083F53E /* SKTTimingFunctions.swift */; };
 		3FDF454019A294350083F53E /* Vector3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDF453119A294350083F53E /* Vector3.swift */; };
+		3FE9907C1A0958D900F24D89 /* gamemusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3FE9907B1A0958D900F24D89 /* gamemusic.mp3 */; };
+		3FE9907D1A0958D900F24D89 /* gamemusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3FE9907B1A0958D900F24D89 /* gamemusic.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -139,7 +137,6 @@
 		3F09485C199E5CF00059D44A /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		3F09485E199E5CFF0059D44A /* Logs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logs.swift; sourceTree = "<group>"; };
 		3F094861199E8B9D0059D44A /* Ground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ground.swift; sourceTree = "<group>"; };
-		3F0988801A091CF8008B0468 /* AppRating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppRating.swift; sourceTree = "<group>"; };
 		3F3C71DD19FAD0AB00A359B9 /* GameKitHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameKitHelper.swift; sourceTree = "<group>"; };
 		3F6D42C719F6BF330081D20B /* PippinFree copy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PippinFree copy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F6D42C819F6BF330081D20B /* PippinFree copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "PippinFree copy-Info.plist"; path = "/Users/jeremy/Documents/Projects/iOS/ProtoSwift/PippinFree/PippinFree copy-Info.plist"; sourceTree = "<absolute>"; };
@@ -171,7 +168,6 @@
 		3FC784B2199D73C6006D333A /* ScoreFont@2x.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "ScoreFont@2x.xml"; sourceTree = "<group>"; };
 		3FC784B3199D73C6006D333A /* ScoreFont@2x~ipad.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "ScoreFont@2x~ipad.xml"; sourceTree = "<group>"; };
 		3FC784B4199D73C6006D333A /* ScoreFont~ipad.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "ScoreFont~ipad.xml"; sourceTree = "<group>"; };
-		3FC784B6199D73C6006D333A /* gamemusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = gamemusic.mp3; sourceTree = "<group>"; };
 		3FC784B8199D73C6006D333A /* bounce.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = bounce.caf; sourceTree = "<group>"; };
 		3FC784B9199D73C6006D333A /* coin.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = coin.caf; sourceTree = "<group>"; };
 		3FC784BA199D73C6006D333A /* falling.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = falling.caf; sourceTree = "<group>"; };
@@ -202,6 +198,7 @@
 		3FDF452F19A294350083F53E /* SKTEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKTEffects.swift; sourceTree = "<group>"; };
 		3FDF453019A294350083F53E /* SKTTimingFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKTTimingFunctions.swift; sourceTree = "<group>"; };
 		3FDF453119A294350083F53E /* Vector3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector3.swift; sourceTree = "<group>"; };
+		3FE9907B1A0958D900F24D89 /* gamemusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = gamemusic.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -356,9 +353,9 @@
 		3FC784A8199D73C6006D333A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3FE9907A1A0958D900F24D89 /* Music */,
 				3FC784A9199D73C6006D333A /* Artwork.atlasc */,
 				3FC784AF199D73C6006D333A /* Fonts */,
-				3FC784B5199D73C6006D333A /* Music */,
 				3FC784B7199D73C6006D333A /* Sounds */,
 			);
 			path = Resources;
@@ -387,14 +384,6 @@
 				3FC784B4199D73C6006D333A /* ScoreFont~ipad.xml */,
 			);
 			path = Fonts;
-			sourceTree = "<group>";
-		};
-		3FC784B5199D73C6006D333A /* Music */ = {
-			isa = PBXGroup;
-			children = (
-				3FC784B6199D73C6006D333A /* gamemusic.mp3 */,
-			);
-			path = Music;
 			sourceTree = "<group>";
 		};
 		3FC784B7199D73C6006D333A /* Sounds */ = {
@@ -439,7 +428,6 @@
 				3F094859199E5CDE0059D44A /* GameSounds.swift */,
 				3FB6A5BA199FF4AF00463876 /* GameSettings.swift */,
 				3FDEAE851A02DC32007E43CF /* NetworkCheck.swift */,
-				3F0988801A091CF8008B0468 /* AppRating.swift */,
 				3FC784EF199D8D81006D333A /* PippinFree-Bridging-Header.h */,
 			);
 			name = Utilities;
@@ -472,6 +460,14 @@
 				3FDF453119A294350083F53E /* Vector3.swift */,
 			);
 			path = SKTUtils;
+			sourceTree = "<group>";
+		};
+		3FE9907A1A0958D900F24D89 /* Music */ = {
+			isa = PBXGroup;
+			children = (
+				3FE9907B1A0958D900F24D89 /* gamemusic.mp3 */,
+			);
+			path = Music;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -598,12 +594,12 @@
 				3F6D42B819F6BF330081D20B /* Artwork.1@2x~iphone.png in Resources */,
 				3F6D42B919F6BF330081D20B /* oink.caf in Resources */,
 				3F6D42BA19F6BF330081D20B /* hitGround.caf in Resources */,
+				3FE9907C1A0958D900F24D89 /* gamemusic.mp3 in Resources */,
 				3F6D42BB19F6BF330081D20B /* ScoreFont@2x~ipad.xml in Resources */,
 				3F6D42BC19F6BF330081D20B /* Artwork.1.png in Resources */,
 				3F6D42BD19F6BF330081D20B /* ScoreFont~ipad.xml in Resources */,
 				3F6D42BE19F6BF330081D20B /* ScoreFont.atlas in Resources */,
 				3F6D42BF19F6BF330081D20B /* flying.caf in Resources */,
-				3F6D42C019F6BF330081D20B /* gamemusic.mp3 in Resources */,
 				3F6D42C119F6BF330081D20B /* Main.storyboard in Resources */,
 				3F6D42C219F6BF330081D20B /* pop.caf in Resources */,
 				3F6D42C319F6BF330081D20B /* Artwork.1@2x~ipad.png in Resources */,
@@ -626,12 +622,12 @@
 				3FC784D7199D73C6006D333A /* Artwork.1@2x~iphone.png in Resources */,
 				3FC784E5199D73C6006D333A /* oink.caf in Resources */,
 				3FC784E4199D73C6006D333A /* hitGround.caf in Resources */,
+				3FE9907D1A0958D900F24D89 /* gamemusic.mp3 in Resources */,
 				3FC784DD199D73C6006D333A /* ScoreFont@2x~ipad.xml in Resources */,
 				3FC784D5199D73C6006D333A /* Artwork.1.png in Resources */,
 				3FC784DE199D73C6006D333A /* ScoreFont~ipad.xml in Resources */,
 				3FC784DA199D73C6006D333A /* ScoreFont.atlas in Resources */,
 				3FC784E3199D73C6006D333A /* flying.caf in Resources */,
-				3FC784DF199D73C6006D333A /* gamemusic.mp3 in Resources */,
 				3FC78468199D72C1006D333A /* Main.storyboard in Resources */,
 				3FC784E6199D73C6006D333A /* pop.caf in Resources */,
 				3FC784D6199D73C6006D333A /* Artwork.1@2x~ipad.png in Resources */,
@@ -654,7 +650,6 @@
 			files = (
 				3F6D428A19F6BF330081D20B /* SKColor+Extensions.swift in Sources */,
 				3F6D428C19F6BF330081D20B /* SKTEffects.swift in Sources */,
-				3F0988811A091CF8008B0468 /* AppRating.swift in Sources */,
 				3F6D428D19F6BF330081D20B /* CGVector+Extensions.swift in Sources */,
 				3F6D428E19F6BF330081D20B /* GameSettings.swift in Sources */,
 				3F6D428F19F6BF330081D20B /* GameScene.swift in Sources */,
@@ -695,7 +690,6 @@
 			files = (
 				3FDF453919A294350083F53E /* SKColor+Extensions.swift in Sources */,
 				3FDF453E19A294350083F53E /* SKTEffects.swift in Sources */,
-				3F0988821A091CF8008B0468 /* AppRating.swift in Sources */,
 				3FDF453419A294350083F53E /* CGVector+Extensions.swift in Sources */,
 				3FB6A5BB199FF4AF00463876 /* GameSettings.swift in Sources */,
 				3FC784C1199D73C6006D333A /* GameScene.swift in Sources */,

@@ -42,7 +42,12 @@ class GameViewController: UIViewController, ADBannerViewDelegate {
             NSNotificationCenter.defaultCenter().addObserver(self, selector: "showAuthenticationViewController", name: "GameCenterViewController", object: nil)
             GameKitHelperSharedInstance.authenticatePlayer()
         }
-        
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        if GameSettingsSharedInstance.shouldRateApp() {
+            self.showRateAppView()
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -135,6 +140,26 @@ class GameViewController: UIViewController, ADBannerViewDelegate {
     func showAuthenticationViewController() {
         let gameKitHelper = GameKitHelperSharedInstance
         self.presentViewController(gameKitHelper.authenticationViewController, animated: true, completion: nil)
+    }
+    
+    private func showRateAppView() {
+        var alertView = UIAlertController(title: "Rate Us", message: "Thanks for playing \(kAppName)!", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        alertView.addAction(UIAlertAction(title: "Rate \(kAppName)", style: UIAlertActionStyle.Default, handler: { alertAction in
+            UIApplication.sharedApplication().openURL(NSURL(string : kAppStoreURL)!)
+            alertView.dismissViewControllerAnimated(true, completion: nil)
+        }))
+        
+        alertView.addAction(UIAlertAction(title: "No Thanks", style: UIAlertActionStyle.Default, handler: { alertAction in
+            GameSettingsSharedInstance.localDefaults.setBool(true, forKey: GameSettingsSharedInstance.keyNeverRate)
+            alertView.dismissViewControllerAnimated(true, completion: nil)
+        }))
+        
+        alertView.addAction(UIAlertAction(title: "Maybe Later", style: UIAlertActionStyle.Default, handler: { alertAction in
+            alertView.dismissViewControllerAnimated(true, completion: nil)
+        }))
+        
+        self.presentViewController(alertView, animated: true, completion: nil)
     }
 
 }
