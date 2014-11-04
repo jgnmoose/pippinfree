@@ -12,6 +12,8 @@
 		3F09485D199E5CF00059D44A /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F09485C199E5CF00059D44A /* Player.swift */; };
 		3F09485F199E5CFF0059D44A /* Logs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F09485E199E5CFF0059D44A /* Logs.swift */; };
 		3F094862199E8B9D0059D44A /* Ground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F094861199E8B9D0059D44A /* Ground.swift */; };
+		3F0988811A091CF8008B0468 /* AppRating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0988801A091CF8008B0468 /* AppRating.swift */; };
+		3F0988821A091CF8008B0468 /* AppRating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0988801A091CF8008B0468 /* AppRating.swift */; };
 		3F3C71DE19FAD0AB00A359B9 /* GameKitHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3C71DD19FAD0AB00A359B9 /* GameKitHelper.swift */; };
 		3F3C71DF19FAD0AB00A359B9 /* GameKitHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3C71DD19FAD0AB00A359B9 /* GameKitHelper.swift */; };
 		3F6D428A19F6BF330081D20B /* SKColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDF452A19A294350083F53E /* SKColor+Extensions.swift */; };
@@ -104,6 +106,7 @@
 		3FD312FD19F180E500F0DDED /* Tutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD312FC19F180E500F0DDED /* Tutorial.swift */; };
 		3FDEAE841A02DC18007E43CF /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FDEAE831A02DC18007E43CF /* SystemConfiguration.framework */; };
 		3FDEAE861A02DC32007E43CF /* NetworkCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDEAE851A02DC32007E43CF /* NetworkCheck.swift */; };
+		3FDEAE871A032A60007E43CF /* NetworkCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDEAE851A02DC32007E43CF /* NetworkCheck.swift */; };
 		3FDF451C19A2628E0083F53E /* Smoke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDF451B19A2628E0083F53E /* Smoke.swift */; };
 		3FDF451F19A283C10083F53E /* GameOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDF451E19A283C10083F53E /* GameOver.swift */; };
 		3FDF453219A294350083F53E /* CGFloat+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDF452319A294350083F53E /* CGFloat+Extensions.swift */; };
@@ -136,6 +139,7 @@
 		3F09485C199E5CF00059D44A /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		3F09485E199E5CFF0059D44A /* Logs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logs.swift; sourceTree = "<group>"; };
 		3F094861199E8B9D0059D44A /* Ground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ground.swift; sourceTree = "<group>"; };
+		3F0988801A091CF8008B0468 /* AppRating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppRating.swift; sourceTree = "<group>"; };
 		3F3C71DD19FAD0AB00A359B9 /* GameKitHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameKitHelper.swift; sourceTree = "<group>"; };
 		3F6D42C719F6BF330081D20B /* PippinFree copy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PippinFree copy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F6D42C819F6BF330081D20B /* PippinFree copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "PippinFree copy-Info.plist"; path = "/Users/jeremy/Documents/Projects/iOS/ProtoSwift/PippinFree/PippinFree copy-Info.plist"; sourceTree = "<absolute>"; };
@@ -435,6 +439,7 @@
 				3F094859199E5CDE0059D44A /* GameSounds.swift */,
 				3FB6A5BA199FF4AF00463876 /* GameSettings.swift */,
 				3FDEAE851A02DC32007E43CF /* NetworkCheck.swift */,
+				3F0988801A091CF8008B0468 /* AppRating.swift */,
 				3FC784EF199D8D81006D333A /* PippinFree-Bridging-Header.h */,
 			);
 			name = Utilities;
@@ -649,6 +654,7 @@
 			files = (
 				3F6D428A19F6BF330081D20B /* SKColor+Extensions.swift in Sources */,
 				3F6D428C19F6BF330081D20B /* SKTEffects.swift in Sources */,
+				3F0988811A091CF8008B0468 /* AppRating.swift in Sources */,
 				3F6D428D19F6BF330081D20B /* CGVector+Extensions.swift in Sources */,
 				3F6D428E19F6BF330081D20B /* GameSettings.swift in Sources */,
 				3F6D428F19F6BF330081D20B /* GameScene.swift in Sources */,
@@ -661,6 +667,7 @@
 				3F6D429619F6BF330081D20B /* SKAction+SpecialEffects.swift in Sources */,
 				3F6D429819F6BF330081D20B /* SKAction+Extensions.swift in Sources */,
 				3F6D429919F6BF330081D20B /* Hils.swift in Sources */,
+				3FDEAE871A032A60007E43CF /* NetworkCheck.swift in Sources */,
 				3F6D429A19F6BF330081D20B /* Vector3.swift in Sources */,
 				3F6D429B19F6BF330081D20B /* Clouds.swift in Sources */,
 				3F3C71DE19FAD0AB00A359B9 /* GameKitHelper.swift in Sources */,
@@ -688,6 +695,7 @@
 			files = (
 				3FDF453919A294350083F53E /* SKColor+Extensions.swift in Sources */,
 				3FDF453E19A294350083F53E /* SKTEffects.swift in Sources */,
+				3F0988821A091CF8008B0468 /* AppRating.swift in Sources */,
 				3FDF453419A294350083F53E /* CGVector+Extensions.swift in Sources */,
 				3FB6A5BB199FF4AF00463876 /* GameSettings.swift in Sources */,
 				3FC784C1199D73C6006D333A /* GameScene.swift in Sources */,

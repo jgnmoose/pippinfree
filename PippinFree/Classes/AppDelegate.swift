@@ -24,11 +24,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationWillResignActive(application: UIApplication!) {
-        if GameSoundsSharedInstance.musicPlayer.playing {
-            if GameSoundsSharedInstance.musicPlayer != nil {
-                GameSoundsSharedInstance.pauseBackgroundMusic()
-            }
-        }
+//        if GameSoundsSharedInstance.musicPlayer.playing {
+//            if GameSoundsSharedInstance.musicPlayer != nil {
+//                GameSoundsSharedInstance.pauseBackgroundMusic()
+//            }
+//        }
+        
+        GameSoundsSharedInstance.pauseBackgroundMusic()
         
         let view = self.window?.rootViewController?.view as SKView
         view.paused = true
@@ -41,11 +43,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidBecomeActive(application: UIApplication!) {
-        if GameSettingsSharedInstance.musicEnabled! {
-            if GameSoundsSharedInstance.musicPlayer != nil {
-                GameSoundsSharedInstance.resumeBackgroundMusic()
-            }
-        }
+//        if GameSettingsSharedInstance.musicEnabled! {
+//            if GameSoundsSharedInstance.musicPlayer != nil {
+//                GameSoundsSharedInstance.resumeBackgroundMusic()
+//            }
+//        }
+        
+        GameSoundsSharedInstance.resumeBackgroundMusic()
         
         let view = self.window?.rootViewController?.view as SKView
         view.paused = false
